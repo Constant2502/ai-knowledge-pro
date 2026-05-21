@@ -1,128 +1,130 @@
 # AGENTS.md
 
-本文件是 AI 知识库项目的 Agent 工作规约初稿，严格对齐 `specs/project-vision.md` 的终态版。
+本文件是 AI 知识库项目的 Agent 工作规约。所有 Agent 在本仓库内工作时，都必须遵守本文档约定。
 
-任何 Agent 在本仓库内工作时，都必须以 `specs/project-vision.md` 为产品事实来源。本文件只把 spec 转译为执行规则，不新增产品范围。
+## 项目概述
 
-## 对齐来源
+本项目自动从 GitHub Trending 和 Hacker News 采集 AI、LLM、Agent 领域的技术动态，经由 AI Agent 分析、筛选、整理后，以结构化 JSON 形式沉淀到本地知识库，并支持通过 Telegram、飞书等渠道进行分发。
 
-- 产品愿景文件：`specs/project-vision.md`
-- 当前版本：`AI 知识库 · 项目愿景 v1.0`
+## 技术栈
 
-如果本文件与 `specs/project-vision.md` 出现冲突，以 `specs/project-vision.md` 为准，并优先修正本文件。
+- Python 3：主要开发语言。
+- Codex：项目内编码、分析、重构和自动化协作入口。
+- LangGraph：用于编排采集、分析、整理、分发等 Agent 工作流。
+- OpenClaw：用于实现网页采集、内容抽取或外部数据抓取能力。
 
-## 要做什么
+## 编码规范
 
-Agent 必须围绕以下目标工作：
+- Python 代码必须遵守 PEP 8。
+- 变量名、函数名、模块名使用 `snake_case`。
+- 类名使用 `PascalCase`。
+- 常量使用 `UPPER_SNAKE_CASE`。
+- 公共函数、类、模块应使用 Google 风格 docstring。
+- 禁止使用裸 `print()` 输出日志、调试信息或运行状态。
+- 日志必须使用标准 `logging` 模块或项目封装的日志工具。
+- 新增代码应保持小函数、清晰职责和可测试性。
+- 不得把 API Key、Token、Webhook、Cookie 等敏感信息写入代码或提交到仓库。
 
-- 每天抓取 GitHub Trending Top 10，并只保留 AI 相关项目。
-- 用 Agent 分析每个入选项目，输出结构化判断。
-- 以 JSON 作为知识条目的主输出格式。
-- Markdown、日报或其他展示形态只能基于 JSON 渲染，不能替代 JSON 成为主格式。
+## 项目结构
 
-## AI 相关判定
+项目目录按以下职责组织：
 
-Agent 必须按以下规则判断 repo 是否 AI 相关：
+```text
+.
+├── AGENTS.md
+├── agents/
+│   ├── collectors/
+│   ├── analyzers/
+│   └── organizers/
+├── skills/
+├── knowledge/
+│   ├── raw/
+│   └── articles/
+└── specs/
+```
 
-- repo 描述、README、topics 或项目名命中 AI、LLM、Agent、RAG、model、inference、fine-tuning、eval、embedding、vector 等关键词。
-- 或者项目明显服务于 AI 开发、推理、数据处理、模型使用、Agent 工作流、MCP、评测或知识库场景。
+目录约定：
 
-Agent 必须过滤以下项目：
+- `agents/`：存放 Agent 角色实现、工作流节点和编排逻辑。
+- `agents/collectors/`：采集 Agent，负责 GitHub Trending、Hacker News 等来源的数据采集。
+- `agents/analyzers/`：分析 Agent，负责 AI/LLM/Agent 相关性判断、摘要、标签和风险分析。
+- `agents/organizers/`：整理 Agent，负责去重、归档、结构化校验和分发前整理。
+- `skills/`：存放项目内可复用技能、提示词模板、工具说明或 Agent 能力说明。
+- `knowledge/raw/`：存放原始采集数据，保留来源、时间、原始标题、链接和未清洗内容。
+- `knowledge/articles/`：存放经过分析和整理后的结构化知识条目 JSON。
+- `specs/`：存放产品规格、项目愿景和需求文档。
 
-- 不相关的前端框架。
-- 通用 CLI。
-- 数据库。
-- 游戏。
-- 系统库。
-- 其他即使进入 GitHub Trending Top 10、但不符合 AI 相关判定的项目。
+## 知识条目 JSON 格式
 
-被过滤项目不得进入最终知识库。
+经过整理后写入 `knowledge/articles/` 的知识条目必须是可解析的 JSON。推荐一个文件保存一个条目，文件名应稳定、可追溯，例如 `{date}-{source}-{slug}.json`。
 
-## Agent 分析内容
-
-每个入选 repo 必须输出以下 6 类分析：
-
-- 一句话定位：这个项目是什么，用来解决什么问题。
-- 核心能力：它提供哪些关键功能或技术能力。
-- 适用场景：谁会用它，用在什么工作流里。
-- 技术关键词：如 Agent、RAG、LLM inference、MCP、embedding、eval、fine-tuning 等。
-- 关注理由：为什么它今天值得进入知识库，不能只是“上了 Trending”。
-- 风险/不确定性：如文档不完整、维护风险、概念炒作、依赖重、商业化不清晰等。
-
-Agent 不得只输出项目简介，也不得把“上了 Trending”当作唯一关注理由。
-
-## 知识条目格式
-
-每个知识条目必须输出为 JSON 对象，字段必须与以下结构对齐：
+知识条目必须包含以下字段：
 
 ```json
 {
-  "date": "2026-05-20",
+  "id": "2026-05-21-github-trending-owner-repo",
+  "title": "项目或文章标题",
   "source": "github_trending",
-  "repo_name": "owner/repo",
-  "repo_url": "https://github.com/owner/repo",
-  "description": "GitHub 原始描述",
-  "stars": 12345,
-  "language": "Python",
+  "source_url": "https://github.com/owner/repo",
+  "source_type": "repository",
+  "published_at": "2026-05-21",
+  "collected_at": "2026-05-21T10:00:00+08:00",
+  "summary": "一句话说明这个动态是什么，以及为什么值得关注。",
+  "content": "整理后的正文或结构化说明。",
+  "tags": ["AI", "LLM", "Agent"],
+  "status": "draft",
   "ai_relevance": true,
-  "ai_relevance_reason": "为什么判定为 AI 相关",
-  "summary": "一句话定位",
-  "capabilities": ["核心能力 1", "核心能力 2"],
-  "use_cases": ["适用场景 1", "适用场景 2"],
-  "technical_keywords": ["Agent", "RAG"],
-  "why_watch": "关注理由",
+  "ai_relevance_reason": "说明为什么该条目属于 AI/LLM/Agent 领域。",
+  "key_points": ["关键点 1", "关键点 2"],
   "risks": ["风险或不确定性 1"],
-  "raw_trending_rank": 1
+  "distribution_channels": ["telegram", "feishu"]
 }
 ```
 
 字段要求：
 
-- `date`：采集日期。
-- `source`：固定为 `github_trending`。
-- `repo_name`：使用 `owner/repo` 格式。
-- `repo_url`：GitHub repo 地址。
-- `description`：GitHub 原始描述。
-- `stars`：项目 star 数。
-- `language`：项目主要语言。
-- `ai_relevance`：最终入库项目必须为 `true`。
-- `ai_relevance_reason`：说明为什么判定为 AI 相关。
-- `summary`：一句话定位。
-- `capabilities`：核心能力数组。
-- `use_cases`：适用场景数组。
-- `technical_keywords`：技术关键词数组。
-- `why_watch`：关注理由。
+- `id`：全局唯一，建议由日期、来源和 slug 组成。
+- `title`：原始标题或整理后的标题。
+- `source`：数据来源，例如 `github_trending` 或 `hacker_news`。
+- `source_url`：原始链接。
+- `source_type`：来源类型，例如 `repository`、`article`、`discussion`、`tool`。
+- `published_at`：原内容发布时间；无法获取时可为空字符串。
+- `collected_at`：采集时间，必须包含时区。
+- `summary`：简明摘要，不能只复制原始描述。
+- `content`：整理后的主体内容。
+- `tags`：标签数组，至少包含一个 AI/LLM/Agent 相关标签。
+- `status`：条目状态，只允许使用 `draft`、`reviewed`、`published`、`archived`。
+- `ai_relevance`：进入 `knowledge/articles/` 的条目必须为 `true`。
+- `ai_relevance_reason`：必须给出具体判断依据。
+- `key_points`：关键点数组。
 - `risks`：风险或不确定性数组。
-- `raw_trending_rank`：项目在当天 GitHub Trending Top 10 中的原始排名。
+- `distribution_channels`：计划分发渠道数组，可包含 `telegram`、`feishu`。
 
-最终输出 JSON 必须可被程序解析。
+## Agent 角色概览
 
-## 不做什么
+| 角色 | 目录 | 输入 | 输出 | 职责 |
+| --- | --- | --- | --- | --- |
+| 采集 Agent | `agents/collectors/` | GitHub Trending、Hacker News 链接或列表 | `knowledge/raw/` 中的原始 JSON | 抓取候选技术动态，保留来源、标题、链接、时间和原始内容。 |
+| 分析 Agent | `agents/analyzers/` | `knowledge/raw/` 原始数据 | 带摘要、标签、相关性判断、关键点和风险的中间结果 | 判断是否属于 AI/LLM/Agent 领域，并生成结构化分析。 |
+| 整理 Agent | `agents/organizers/` | 分析后的中间结果 | `knowledge/articles/` 中的最终知识条目 JSON | 去重、补齐字段、校验 JSON、维护状态，并准备 Telegram/飞书分发数据。 |
 
-Agent 不得在 v1.0 中做以下事情：
+## 分发约定
 
-- 不做泛化的 GitHub Trending 摘要，只关注 AI 相关项目。
-- 不引入评分体系，避免在样本不足时制造伪精确分数。
-- 不优先做人读 Markdown；Markdown、日报、页面展示都必须从 JSON 派生。
-- 不承诺覆盖所有 AI 开源项目，只处理当天 GitHub Trending Top 10 中符合条件的项目。
+- Telegram 和飞书只消费 `knowledge/articles/` 中状态合适的 JSON 条目。
+- 分发内容必须从 JSON 字段生成，不得绕过知识库直接拼接未验证的原始采集内容。
+- 分发前必须检查 `status`，只有 `reviewed` 或 `published` 状态的条目可以进入正式分发。
+- 分发失败时不得丢弃知识条目，应记录失败原因并允许重试。
 
-## 边界 & 验收
+## 红线
 
-一个实现或一次运行只有满足以下条件，才算符合 v1.0 spec：
+以下操作绝对禁止：
 
-- 每天最多处理 GitHub Trending Top 10。
-- 非 AI 相关项目必须被过滤，并给出过滤依据或不进入最终输出。
-- 每个入库项目必须包含完整 JSON 字段。
-- Agent 输出必须包含 6 类分析，不允许只给项目简介。
-- `ai_relevance_reason` 和 `why_watch` 必须是具体判断，不能只写“AI 相关”或“上了 Trending”。
-- 输出 JSON 必须可被程序解析。
-
-## 怎么验证
-
-Agent 完成相关实现或运行后，必须按以下方式验证：
-
-- 用某一天的 GitHub Trending Top 10 跑一次完整流程。
-- 检查过滤后留下的项目是否都符合 AI 相关判定。
-- 检查每个知识条目是否包含完整字段，且 JSON 可解析。
-- 抽查 Agent 分析是否能回答三个问题：这个项目是什么、为什么值得关注、有什么风险。
-- 确认没有非 AI 相关项目进入最终知识库。
+- 禁止提交 API Key、Token、Webhook、Cookie、账号密码等敏感信息。
+- 禁止使用裸 `print()` 作为日志、调试或状态输出。
+- 禁止把未经 AI/LLM/Agent 相关性判断的内容写入 `knowledge/articles/`。
+- 禁止把不可解析 JSON 写入 `knowledge/articles/`。
+- 禁止绕过 JSON 知识库直接向 Telegram 或飞书分发原始采集内容。
+- 禁止伪造来源、发布时间、采集时间或链接。
+- 禁止删除 `knowledge/raw/` 中的原始采集记录，除非用户明确要求。
+- 禁止在没有用户确认的情况下执行破坏性操作，例如批量删除数据、重写历史、清空知识库。
+- 禁止引入与项目目标无关的大型框架、服务或复杂基础设施。
