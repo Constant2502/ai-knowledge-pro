@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-imbad0202-academic-research-skills",
+  "title": "Imbad0202/academic-research-skills",
+  "source": "github_trending",
+  "source_url": "https://github.com/Imbad0202/academic-research-skills",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "Claude Code 的学术研究技能集。",
+  "content": "academic-research-skills 是一组面向 Claude Code 的学术研究技能，覆盖研究问题细化、文献综述、方法设计、论文写作和引用管理。",
+  "tags": [
+    "Claude Code",
+    "Agent Skills",
+    "Research Agent",
+    "Academic Writing",
+    "Workflow"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目以 Claude Code skills 形式封装研究工作流，直接属于 AI agent 能力扩展和垂直场景应用。",
+  "key_points": [
+    "覆盖研究问题细化、文献综述、方法设计和论文写作。",
+    "以 Claude Code skills 形态封装垂直研究工作流。",
+    "本周 GitHub Trending 排名第 3，weekly stars 为 447。"
+  ],
+  "risks": [
+    "更偏提示词和流程资产，通用工程基础设施属性较弱。"
+  ],
+  "score": 7,
+  "score_reason": "它展示了 agent skill 在学术研究场景的具体落地，适合观察垂直技能包趋势；但更偏提示词和流程资产，通用工程基础设施属性较弱。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

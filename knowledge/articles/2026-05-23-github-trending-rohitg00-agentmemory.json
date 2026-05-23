@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-rohitg00-agentmemory",
+  "title": "rohitg00/agentmemory",
+  "source": "github_trending",
+  "source_url": "https://github.com/rohitg00/agentmemory",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "面向 AI agent 的长期记忆层。",
+  "content": "agentmemory 是面向 AI agent 的记忆层，提供长期记忆、知识图谱、向量搜索和持久化能力。",
+  "tags": [
+    "Agent Memory",
+    "Knowledge Graph",
+    "Vector Search",
+    "Persistence",
+    "AI Infrastructure"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目明确服务 AI agents，并包含长期记忆、知识图谱和向量搜索等 agent 基础设施能力。",
+  "key_points": [
+    "明确提供长期记忆、知识图谱、向量搜索和持久化。",
+    "目标用户是需要记忆能力的 AI agent 应用。",
+    "本周 GitHub Trending 排名第 4，weekly stars 为 121。"
+  ],
+  "risks": [
+    "需要进一步验证 API 设计、存储后端和真实场景表现。"
+  ],
+  "score": 7,
+  "score_reason": "记忆层是 agent 应用从 demo 走向可用系统的关键组件，项目方向重要；但当前 stars 和 raw 信息有限，还需要验证 API 设计、存储后端和真实场景表现。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

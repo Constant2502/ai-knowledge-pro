@@ -1,0 +1,218 @@
+{
+  "source_file": "knowledge/raw/github-trending-2026-05-23.json",
+  "skill": "tech-summary",
+  "analyzed_at": "2026-05-23T14:20:00+08:00",
+  "items": [
+    {
+      "name": "colbymchenry/codegraph",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "summary": "为 coding agent 构建代码图上下文。",
+      "technical_highlights": [
+        "用 Python 包形式把代码库转成图结构上下文。",
+        "面向语义代码搜索、影响分析和 AI 代码理解。",
+        "本周 GitHub Trending 排名第 1，weekly stars 为 478。"
+      ],
+      "score": 8,
+      "score_reason": "它直接解决 coding agent 的代码库上下文问题，场景清晰且和 AI 工程高度相关；但当前 raw 信息不足以判断语言覆盖、解析深度和生产稳定性，所以不打 9 分。",
+      "tag_suggestions": [
+        "AI",
+        "Coding Agent",
+        "Semantic Search",
+        "Code Understanding",
+        "Developer Tool"
+      ]
+    },
+    {
+      "name": "tinyhumansai/openhuman",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "summary": "本地优先的个人 AI 助理项目。",
+      "technical_highlights": [
+        "定位为开源、本地优先的个人 AI。",
+        "显式包含 MCP、长期记忆和任务自动化能力。",
+        "本周 GitHub Trending 排名第 2，weekly stars 为 656。"
+      ],
+      "score": 8,
+      "score_reason": "它把本地优先、MCP、记忆和个人自动化组合在一起，贴近下一代个人 agent 产品形态；但边界较宽，仍需验证实际完成度和长期可维护性。",
+      "tag_suggestions": [
+        "Personal AI",
+        "Agent",
+        "MCP",
+        "Memory",
+        "Local First"
+      ]
+    },
+    {
+      "name": "Imbad0202/academic-research-skills",
+      "url": "https://github.com/Imbad0202/academic-research-skills",
+      "summary": "Claude Code 的学术研究技能集。",
+      "technical_highlights": [
+        "覆盖研究问题细化、文献综述、方法设计和论文写作。",
+        "以 Claude Code skills 形态封装垂直研究工作流。",
+        "本周 GitHub Trending 排名第 3，weekly stars 为 447。"
+      ],
+      "score": 7,
+      "score_reason": "它展示了 agent skill 在学术研究场景的具体落地，适合观察垂直技能包趋势；但更偏提示词和流程资产，通用工程基础设施属性较弱。",
+      "tag_suggestions": [
+        "Claude Code",
+        "Agent Skills",
+        "Research Agent",
+        "Academic Writing",
+        "Workflow"
+      ]
+    },
+    {
+      "name": "rohitg00/agentmemory",
+      "url": "https://github.com/rohitg00/agentmemory",
+      "summary": "面向 AI agent 的长期记忆层。",
+      "technical_highlights": [
+        "明确提供长期记忆、知识图谱、向量搜索和持久化。",
+        "目标用户是需要记忆能力的 AI agent 应用。",
+        "本周 GitHub Trending 排名第 4，weekly stars 为 121。"
+      ],
+      "score": 7,
+      "score_reason": "记忆层是 agent 应用从 demo 走向可用系统的关键组件，项目方向重要；但当前 stars 和 raw 信息有限，还需要验证 API 设计、存储后端和真实场景表现。",
+      "tag_suggestions": [
+        "Agent Memory",
+        "Knowledge Graph",
+        "Vector Search",
+        "Persistence",
+        "AI Infrastructure"
+      ]
+    },
+    {
+      "name": "supertone-inc/supertonic",
+      "url": "https://github.com/supertone-inc/supertonic",
+      "summary": "高拟真 TTS 推理与服务项目。",
+      "technical_highlights": [
+        "聚焦 realistic human-like Text-to-Speech。",
+        "同时覆盖 inference 和 serving 两类工程能力。",
+        "本周 GitHub Trending 排名第 6，weekly stars 为 267。"
+      ],
+      "score": 7,
+      "score_reason": "TTS 推理和服务是多模态 AI 产品的重要能力，项目定位明确；但 raw 数据没有模型质量、延迟、部署方式等关键证据，所以保持中高分。",
+      "tag_suggestions": [
+        "TTS",
+        "Voice AI",
+        "Inference",
+        "Model Serving",
+        "Multimodal AI"
+      ]
+    },
+    {
+      "name": "HKUDS/ViMax",
+      "url": "https://github.com/HKUDS/ViMax",
+      "summary": "面向长视频的 agentic 理解项目。",
+      "technical_highlights": [
+        "项目描述明确指向 Agentic Video Understanding。",
+        "topics 覆盖 multimodal、video-understanding 和 captioning。",
+        "本周 GitHub Trending 排名第 7，weekly stars 为 147。"
+      ],
+      "score": 6,
+      "score_reason": "长视频理解和多模态 agent 值得关注，但 raw 信息较少，仓库规模也较小，当前更适合作为方向观察而不是立即采用。",
+      "tag_suggestions": [
+        "Multimodal",
+        "Video Understanding",
+        "Agentic Video",
+        "Captioning",
+        "Research"
+      ]
+    },
+    {
+      "name": "humanlayer/12-factor-agents",
+      "url": "https://github.com/humanlayer/12-factor-agents",
+      "summary": "生产级 LLM 应用的工程原则。",
+      "technical_highlights": [
+        "聚焦如何构建可交付给生产用户的 LLM 软件。",
+        "topics 指向 agents、AI engineering、应用架构和可靠性。",
+        "总 stars 为 5040，本周仍有 112 weekly stars。"
+      ],
+      "score": 8,
+      "score_reason": "它把 agent 和 LLM 应用的可靠性问题抽象成工程原则，对团队落地有直接参考价值；但它是原则和方法论，不是可直接集成的运行时组件。",
+      "tag_suggestions": [
+        "LLM",
+        "Agent",
+        "AI Engineering",
+        "Reliability",
+        "Application Architecture"
+      ]
+    },
+    {
+      "name": "datawhalechina/easy-vibe",
+      "url": "https://github.com/datawhalechina/easy-vibe",
+      "summary": "面向新手的 AI coding 课程。",
+      "technical_highlights": [
+        "课程从编程基础覆盖到项目实践。",
+        "明确面向 AI coding 和 vibe coding 学习路径。",
+        "本周 GitHub Trending 排名第 11，weekly stars 为 107。"
+      ],
+      "score": 6,
+      "score_reason": "它对 AI coding 教育和入门传播有价值，但更多是课程材料，不是新的技术框架或基础设施，短期采用价值取决于学习需求。",
+      "tag_suggestions": [
+        "AI Coding",
+        "Vibe Coding",
+        "Education",
+        "Notebook",
+        "Developer Learning"
+      ]
+    },
+    {
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "summary": "为 Claude Code 扩展可组合技能。",
+      "technical_highlights": [
+        "项目定位是为不同问题构建定制 AI agent。",
+        "围绕 Claude Code、agents、skills 和 prompt engineering。",
+        "总 stars 为 6729，本周仍有 90 weekly stars。"
+      ],
+      "score": 7,
+      "score_reason": "它体现了通过技能文件扩展 coding agent 行为的轻量范式，生态观察价值高；但 raw 信息显示它更偏技能组织方式，工程可复用边界仍需进一步确认。",
+      "tag_suggestions": [
+        "Claude Code",
+        "Agent Skills",
+        "Prompt Engineering",
+        "Coding Agent",
+        "Workflow"
+      ]
+    },
+    {
+      "name": "rohitg00/ai-engineering-from-scratch",
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "summary": "从零学习 AI Engineering 的 notebooks。",
+      "technical_highlights": [
+        "以 Jupyter Notebook 形式覆盖 AI Engineering 概念。",
+        "总 stars 为 19746，forks 为 4946，学习资源热度高。",
+        "本周 GitHub Trending 排名第 15，weekly stars 为 66。"
+      ],
+      "score": 7,
+      "score_reason": "它是成熟且受欢迎的 AI 工程学习材料，适合持续收录；但它主要是教育资源，不代表新的框架、模型或基础设施突破。",
+      "tag_suggestions": [
+        "AI Engineering",
+        "LLM",
+        "Notebook",
+        "Education",
+        "Learning Resource"
+      ]
+    }
+  ],
+  "trends": {
+    "common_themes": [
+      "Coding agent 周边工具明显增多，覆盖代码上下文、Claude Code skills、个人 agent 和技能扩展。",
+      "Agent 记忆、MCP 和本地优先个人 AI 是本批项目里的高频工程主题。",
+      "教育型项目仍有热度，AI coding 和 AI engineering 入门资源持续吸引关注。",
+      "多模态推理方向出现语音 TTS 服务和长视频理解两个具体切口。"
+    ],
+    "new_concepts": [
+      "Agentic Video Understanding",
+      "本地优先个人 AI 与 MCP 原生集成",
+      "面向 Claude Code 的垂直技能包",
+      "代码库图上下文作为 coding agent 输入层"
+    ],
+    "watch_directions": [
+      "继续观察 coding agent 如何获取高质量代码库上下文，包括图结构、语义搜索和影响分析。",
+      "跟踪 agent memory 项目是否形成稳定 API、可替换存储后端和可评测的记忆效果。",
+      "关注 MCP 与个人 AI、本地自动化工具的结合是否从 demo 进入真实工作流。",
+      "观察 Claude Code skills 生态是否形成可复用的技能组织、版本管理和质量评估方法。",
+      "对 TTS serving 和长视频理解项目补充模型质量、部署成本和推理延迟信息后再判断采用价值。"
+    ]
+  }
+}

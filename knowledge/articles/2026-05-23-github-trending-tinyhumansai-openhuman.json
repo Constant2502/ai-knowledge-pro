@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-tinyhumansai-openhuman",
+  "title": "tinyhumansai/openhuman",
+  "source": "github_trending",
+  "source_url": "https://github.com/tinyhumansai/openhuman",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "本地优先的个人 AI 助理项目。",
+  "content": "openhuman 是一个开源、本地优先的个人 AI 项目，强调 MCP、长期记忆、任务管理和自动化能力。",
+  "tags": [
+    "Personal AI",
+    "Agent",
+    "MCP",
+    "Memory",
+    "Local First"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目明确定位为 personal AI，并包含 MCP、memory 和 automation 等 agent 应用核心能力。",
+  "key_points": [
+    "定位为开源、本地优先的个人 AI。",
+    "显式包含 MCP、长期记忆和任务自动化能力。",
+    "本周 GitHub Trending 排名第 2，weekly stars 为 656。"
+  ],
+  "risks": [
+    "项目边界较宽，需要进一步验证实际完成度和长期可维护性。"
+  ],
+  "score": 8,
+  "score_reason": "它把本地优先、MCP、记忆和个人自动化组合在一起，贴近下一代个人 agent 产品形态；但边界较宽，仍需验证实际完成度和长期可维护性。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

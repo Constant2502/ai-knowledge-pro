@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-rohitg00-ai-engineering-from-scratch",
+  "title": "rohitg00/ai-engineering-from-scratch",
+  "source": "github_trending",
+  "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "从零学习 AI Engineering 的 notebooks。",
+  "content": "ai-engineering-from-scratch 是一组 Jupyter Notebook 学习资源，用于从零理解 AI Engineering 概念。",
+  "tags": [
+    "AI Engineering",
+    "LLM",
+    "Notebook",
+    "Education",
+    "Learning Resource"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目明确覆盖 AI Engineering concepts，支持 AI/LLM 应用工程学习。",
+  "key_points": [
+    "以 Jupyter Notebook 形式覆盖 AI Engineering 概念。",
+    "总 stars 为 19746，forks 为 4946，学习资源热度高。",
+    "本周 GitHub Trending 排名第 15，weekly stars 为 66。"
+  ],
+  "risks": [
+    "它主要是教育资源，不代表新的框架、模型或基础设施突破。"
+  ],
+  "score": 7,
+  "score_reason": "它是成熟且受欢迎的 AI 工程学习材料，适合持续收录；但它主要是教育资源，不代表新的框架、模型或基础设施突破。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

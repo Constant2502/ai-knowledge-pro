@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-supertone-inc-supertonic",
+  "title": "supertone-inc/supertonic",
+  "source": "github_trending",
+  "source_url": "https://github.com/supertone-inc/supertonic",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "高拟真 TTS 推理与服务项目。",
+  "content": "supertonic 聚焦 realistic human-like Text-to-Speech，覆盖语音生成模型的推理和服务能力。",
+  "tags": [
+    "TTS",
+    "Voice AI",
+    "Inference",
+    "Model Serving",
+    "Multimodal AI"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目聚焦 Text-to-Speech inference and serving，属于 AI 音频生成和模型服务基础设施。",
+  "key_points": [
+    "聚焦 realistic human-like Text-to-Speech。",
+    "同时覆盖 inference 和 serving 两类工程能力。",
+    "本周 GitHub Trending 排名第 6，weekly stars 为 267。"
+  ],
+  "risks": [
+    "当前采集数据缺少模型质量、延迟和部署方式等关键证据。"
+  ],
+  "score": 7,
+  "score_reason": "TTS 推理和服务是多模态 AI 产品的重要能力，项目定位明确；但 raw 数据没有模型质量、延迟、部署方式等关键证据，所以保持中高分。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

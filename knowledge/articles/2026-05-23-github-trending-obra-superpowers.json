@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-obra-superpowers",
+  "title": "obra/superpowers",
+  "source": "github_trending",
+  "source_url": "https://github.com/obra/superpowers",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "为 Claude Code 扩展可组合技能。",
+  "content": "superpowers 围绕 Claude Code、agents、skills 和 prompt engineering，提供通过技能扩展 coding agent 行为的方式。",
+  "tags": [
+    "Claude Code",
+    "Agent Skills",
+    "Prompt Engineering",
+    "Coding Agent",
+    "Workflow"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目聚焦 Claude Code skills 和定制 AI agent 行为，是 coding agent 能力扩展生态的一部分。",
+  "key_points": [
+    "项目定位是为不同问题构建定制 AI agent。",
+    "围绕 Claude Code、agents、skills 和 prompt engineering。",
+    "总 stars 为 6729，本周仍有 90 weekly stars。"
+  ],
+  "risks": [
+    "当前 raw 信息显示它更偏技能组织方式，工程可复用边界仍需进一步确认。"
+  ],
+  "score": 7,
+  "score_reason": "它体现了通过技能文件扩展 coding agent 行为的轻量范式，生态观察价值高；但 raw 信息显示它更偏技能组织方式，工程可复用边界仍需进一步确认。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-hkuds-vimax",
+  "title": "HKUDS/ViMax",
+  "source": "github_trending",
+  "source_url": "https://github.com/HKUDS/ViMax",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "面向长视频的 agentic 理解项目。",
+  "content": "ViMax 是一个面向 agentic video understanding 的项目，涉及多模态、视频理解和视频字幕生成。",
+  "tags": [
+    "Multimodal",
+    "Video Understanding",
+    "Agentic Video",
+    "Captioning",
+    "Research"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目明确指向 agentic video understanding，是多模态 AI 和 agentic 分析方向的研究项目。",
+  "key_points": [
+    "项目描述明确指向 Agentic Video Understanding。",
+    "topics 覆盖 multimodal、video-understanding 和 captioning。",
+    "本周 GitHub Trending 排名第 7，weekly stars 为 147。"
+  ],
+  "risks": [
+    "当前 raw 信息较少，仓库规模也较小，更适合作为方向观察。"
+  ],
+  "score": 6,
+  "score_reason": "长视频理解和多模态 agent 值得关注，但 raw 信息较少，仓库规模也较小，当前更适合作为方向观察而不是立即采用。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

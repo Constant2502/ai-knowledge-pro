@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-datawhalechina-easy-vibe",
+  "title": "datawhalechina/easy-vibe",
+  "source": "github_trending",
+  "source_url": "https://github.com/datawhalechina/easy-vibe",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "面向新手的 AI coding 课程。",
+  "content": "easy-vibe 是面向零基础用户的 AI coding 课程，从编程基础覆盖到项目实践。",
+  "tags": [
+    "AI Coding",
+    "Vibe Coding",
+    "Education",
+    "Notebook",
+    "Developer Learning"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目明确面向 AI coding 和 vibe coding 学习路径，属于 AI 辅助编程教育资源。",
+  "key_points": [
+    "课程从编程基础覆盖到项目实践。",
+    "明确面向 AI coding 和 vibe coding 学习路径。",
+    "本周 GitHub Trending 排名第 11，weekly stars 为 107。"
+  ],
+  "risks": [
+    "它主要是课程材料，不是新的技术框架或基础设施。"
+  ],
+  "score": 6,
+  "score_reason": "它对 AI coding 教育和入门传播有价值，但更多是课程材料，不是新的技术框架或基础设施，短期采用价值取决于学习需求。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

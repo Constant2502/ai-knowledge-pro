@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-colbymchenry-codegraph",
+  "title": "colbymchenry/codegraph",
+  "source": "github_trending",
+  "source_url": "https://github.com/colbymchenry/codegraph",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "为 coding agent 构建代码图上下文。",
+  "content": "codegraph 是一个 Python 包，用于把代码库构建成图结构上下文，服务语义代码搜索、影响分析和 AI 代码理解。",
+  "tags": [
+    "AI",
+    "Coding Agent",
+    "Semantic Search",
+    "Code Understanding",
+    "Developer Tool"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目明确面向 AI-powered code understanding 和 semantic code search，是 coding agent 获取代码库上下文的关键能力。",
+  "key_points": [
+    "用 Python 包形式把代码库转成图结构上下文。",
+    "面向语义代码搜索、影响分析和 AI 代码理解。",
+    "本周 GitHub Trending 排名第 1，weekly stars 为 478。"
+  ],
+  "risks": [
+    "当前采集信息不足以判断语言覆盖、解析深度和生产稳定性。"
+  ],
+  "score": 8,
+  "score_reason": "它直接解决 coding agent 的代码库上下文问题，场景清晰且和 AI 工程高度相关；但当前 raw 信息不足以判断语言覆盖、解析深度和生产稳定性，所以不打 9 分。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

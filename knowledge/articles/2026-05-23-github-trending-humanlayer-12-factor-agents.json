@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-trending-humanlayer-12-factor-agents",
+  "title": "humanlayer/12-factor-agents",
+  "source": "github_trending",
+  "source_url": "https://github.com/humanlayer/12-factor-agents",
+  "source_type": "repository",
+  "published_at": "",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "summary": "生产级 LLM 应用的工程原则。",
+  "content": "12-factor-agents 总结构建可交付给生产用户的 LLM-powered software 的原则，重点关注 agents、AI engineering、应用架构和可靠性。",
+  "tags": [
+    "LLM",
+    "Agent",
+    "AI Engineering",
+    "Reliability",
+    "Application Architecture"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目直接讨论生产级 LLM-powered software 和 agent systems 的工程原则。",
+  "key_points": [
+    "聚焦如何构建可交付给生产用户的 LLM 软件。",
+    "topics 指向 agents、AI engineering、应用架构和可靠性。",
+    "总 stars 为 5040，本周仍有 112 weekly stars。"
+  ],
+  "risks": [
+    "它是原则和方法论，不是可直接集成的运行时组件。"
+  ],
+  "score": 8,
+  "score_reason": "它把 agent 和 LLM 应用的可靠性问题抽象成工程原则，对团队落地有直接参考价值；但它是原则和方法论，不是可直接集成的运行时组件。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "source": "github_trending",
+  "skill": "github-trending",
+  "period": "weekly",
+  "source_url": "https://github.com/trending?since=weekly",
+  "collected_at": "2026-05-23T00:00:00+08:00",
+  "collection_note": "Collected from the GitHub Trending weekly page for 2026-05-23. GitHub API access from the local sandbox failed with a DNS resolution error, so repository metadata was taken from the visible GitHub Trending page and repository/search snippets. Items were filtered for AI, LLM, Agent, inference, MCP, coding-agent, or AI engineering relevance, excluding general tools and non-AI projects.",
+  "items": [
+    {
+      "name": "colbymchenry/codegraph",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "summary": "colbymchenry/codegraph 是一个把代码库构建成图上下文的 Python 包，用于语义搜索、影响分析和 AI 代码理解，值得关注是因为它本周位于 GitHub Trending 前列并直接服务 coding agent 的上下文构建。",
+      "description": "A Python package for building graph-based context from codebases, enabling semantic code search, impact analysis, and AI-powered code understanding.",
+      "stars": 478,
+      "forks": 46,
+      "weekly_stars": 478,
+      "language": "Python",
+      "topics": [
+        "AI",
+        "semantic-search",
+        "code-understanding",
+        "code-graph",
+        "coding-agent"
+      ],
+      "trending_rank": 1,
+      "ai_relevance_reason": "The repository explicitly targets AI-powered code understanding and semantic code search, which are core capabilities for coding-agent workflows."
+    },
+    {
+      "name": "tinyhumansai/openhuman",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "summary": "tinyhumansai/openhuman 是一个开源、本地优先的个人 AI 项目，提供 MCP、长期记忆和任务自动化能力，值得关注是因为它把个人助理、记忆和 agent 工具接入结合在一起。",
+      "description": "Your personal AI. Open-source + Local-first. Native MCP. Memory that improves over time. Learn your style, manage your tasks, and automate your busy work.",
+      "stars": 658,
+      "forks": 51,
+      "weekly_stars": 656,
+      "language": "Python",
+      "topics": [
+        "AI",
+        "personal-ai",
+        "local-first",
+        "MCP",
+        "memory",
+        "agent"
+      ],
+      "trending_rank": 2,
+      "ai_relevance_reason": "The project is explicitly positioned as a personal AI with MCP integration, memory, and automation capabilities."
+    },
+    {
+      "name": "Imbad0202/academic-research-skills",
+      "url": "https://github.com/Imbad0202/academic-research-skills",
+      "summary": "Imbad0202/academic-research-skills 是一组面向 Claude Code 的学术研究技能，覆盖文献综述、论文写作和引用管理，值得关注是因为它体现了 agent skill 在垂直研究工作流中的落地方式。",
+      "description": "Academic Research Skills for Claude Code: research question refinement, literature review, methodology design, theoretical framework development, academic writing, citation management, and research quality verification.",
+      "stars": 447,
+      "forks": 117,
+      "weekly_stars": 447,
+      "language": "Python",
+      "topics": [
+        "Claude-Code",
+        "AI",
+        "agent-skills",
+        "research",
+        "academic-writing"
+      ],
+      "trending_rank": 3,
+      "ai_relevance_reason": "The repository provides Claude Code skills, making it directly relevant to AI agent capability packaging and research-agent workflows."
+    },
+    {
+      "name": "rohitg00/agentmemory",
+      "url": "https://github.com/rohitg00/agentmemory",
+      "summary": "rohitg00/agentmemory 是一个面向 AI agent 的生产级长期记忆层，提供知识图谱、向量搜索和持久化能力，值得关注是因为记忆基础设施是 agent 应用从 demo 走向可用系统的关键环节。",
+      "description": "Memory layer for AI agents providing long-term memory, knowledge graph, vector search, and persistence.",
+      "stars": 121,
+      "forks": 7,
+      "weekly_stars": 121,
+      "language": "Python",
+      "topics": [
+        "AI",
+        "agent-memory",
+        "knowledge-graph",
+        "vector-search",
+        "persistence"
+      ],
+      "trending_rank": 4,
+      "ai_relevance_reason": "The repository is explicitly built as a memory layer for AI agents and includes agent-relevant persistence and retrieval capabilities."
+    },
+    {
+      "name": "supertone-inc/supertonic",
+      "url": "https://github.com/supertone-inc/supertonic",
+      "summary": "supertone-inc/supertonic 是一个用于高拟真语音合成推理和服务的开源项目，值得关注是因为语音生成和推理服务正在成为多模态 AI 产品的重要基础能力。",
+      "description": "Realistic, human-like Text-to-Speech inference and serving.",
+      "stars": 621,
+      "forks": 75,
+      "weekly_stars": 267,
+      "language": "Python",
+      "topics": [
+        "AI",
+        "text-to-speech",
+        "TTS",
+        "inference",
+        "voice-ai",
+        "serving"
+      ],
+      "trending_rank": 6,
+      "ai_relevance_reason": "The repository focuses on text-to-speech model inference and serving, which is directly relevant to AI audio generation infrastructure."
+    },
+    {
+      "name": "HKUDS/ViMax",
+      "url": "https://github.com/HKUDS/ViMax",
+      "summary": "HKUDS/ViMax 是一个面向长视频理解的 agentic video captioning 项目，值得关注是因为它把视频增强、字幕生成和多模态理解结合到长视频 AI 场景中。",
+      "description": "ViMax: A Simple yet Effective Approach for Agentic Video Understanding.",
+      "stars": 152,
+      "forks": 2,
+      "weekly_stars": 147,
+      "language": "Python",
+      "topics": [
+        "AI",
+        "multimodal",
+        "video-understanding",
+        "agentic-video",
+        "captioning"
+      ],
+      "trending_rank": 7,
+      "ai_relevance_reason": "The repository is explicitly about agentic video understanding, placing it in the multimodal AI and agentic analysis domain."
+    },
+    {
+      "name": "humanlayer/12-factor-agents",
+      "url": "https://github.com/humanlayer/12-factor-agents",
+      "summary": "humanlayer/12-factor-agents 是一套构建可靠 LLM 应用的工程原则，值得关注是因为它把 agent 和 LLM 应用开发中的可靠性、可维护性问题系统化表达出来。",
+      "description": "What are the principles we can use to build LLM-powered software that is actually good enough to put in the hands of production customers?",
+      "stars": 5040,
+      "forks": 396,
+      "weekly_stars": 112,
+      "language": "TypeScript",
+      "topics": [
+        "LLM",
+        "agents",
+        "AI-engineering",
+        "application-architecture",
+        "reliability"
+      ],
+      "trending_rank": 9,
+      "ai_relevance_reason": "The project directly discusses principles for production-quality LLM-powered software and agent systems."
+    },
+    {
+      "name": "datawhalechina/easy-vibe",
+      "url": "https://github.com/datawhalechina/easy-vibe",
+      "summary": "datawhalechina/easy-vibe 是一个面向零基础用户的 AI 编程实践教程，从编程基础到项目实战，值得关注是因为 AI coding 教育正在扩大非专业开发者使用 LLM 工具的入口。",
+      "description": "Everyone can AI coding. This repo is a course that teaches AI coding from programming basics to project practice.",
+      "stars": 1071,
+      "forks": 163,
+      "weekly_stars": 107,
+      "language": "Jupyter Notebook",
+      "topics": [
+        "AI",
+        "AI-coding",
+        "vibe-coding",
+        "education",
+        "software-engineering"
+      ],
+      "trending_rank": 11,
+      "ai_relevance_reason": "The repository is explicitly about AI coding education and practical AI-assisted programming workflows."
+    },
+    {
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "summary": "obra/superpowers 是一套面向 Claude Code 的自文档化、可组合技能系统，帮助用户构建定制化 agent 能力，值得关注是因为它展示了通过技能文件扩展 coding agent 行为的轻量模式。",
+      "description": "A bespoke AI agent for every problem.",
+      "stars": 6729,
+      "forks": 438,
+      "weekly_stars": 90,
+      "language": "Shell",
+      "topics": [
+        "AI",
+        "Claude-Code",
+        "agents",
+        "skills",
+        "prompt-engineering"
+      ],
+      "trending_rank": 12,
+      "ai_relevance_reason": "The repository focuses on extending Claude Code with reusable skills and bespoke AI-agent behavior."
+    },
+    {
+      "name": "rohitg00/ai-engineering-from-scratch",
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "summary": "rohitg00/ai-engineering-from-scratch 是一套从零讲解 AI Engineering 概念的 notebook 资源，值得关注是因为它在本周仍有热度，适合作为 LLM 应用工程学习入口。",
+      "description": "A collection of notebooks covering AI Engineering concepts from scratch.",
+      "stars": 19746,
+      "forks": 4946,
+      "weekly_stars": 66,
+      "language": "Jupyter Notebook",
+      "topics": [
+        "AI",
+        "AI-engineering",
+        "LLM",
+        "notebooks",
+        "education"
+      ],
+      "trending_rank": 15,
+      "ai_relevance_reason": "The repository is explicitly about AI engineering concepts and supports AI/LLM application learning."
+    }
+  ],
+  "filtered_items": [
+    {
+      "name": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "trending_rank": 5,
+      "filter_reason": "WiFi-based spatial intelligence and vital sign monitoring project; no concrete AI, LLM, Agent, MCP, inference, or AI engineering signal in the visible Trending metadata."
+    },
+    {
+      "name": "Harris-Huang/CloakBrowser",
+      "url": "https://github.com/Harris-Huang/CloakBrowser",
+      "trending_rank": 8,
+      "filter_reason": "Browser anti-bot-detection project; relevant to automation but not specifically AI, LLM, Agent, or AI engineering."
+    },
+    {
+      "name": "oven-sh/bun",
+      "url": "https://github.com/oven-sh/bun",
+      "trending_rank": 10,
+      "filter_reason": "General JavaScript runtime and toolkit; no direct AI, LLM, Agent, or inference focus in the visible Trending metadata."
+    },
+    {
+      "name": "facebook/pyrefly",
+      "url": "https://github.com/facebook/pyrefly",
+      "trending_rank": 13,
+      "filter_reason": "Fast Python type checker and IDE project; useful developer infrastructure but not specifically AI, LLM, or Agent focused."
+    },
+    {
+      "name": "stremio/stremio-web",
+      "url": "https://github.com/stremio/stremio-web",
+      "trending_rank": 14,
+      "filter_reason": "Video streaming web application; no visible AI, LLM, Agent, or inference relevance."
+    }
+  ]
+}
