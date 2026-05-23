@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-search-vycdev-jett",
+  "title": "vycdev/jett",
+  "source": "github_search",
+  "source_url": "https://github.com/vycdev/jett",
+  "source_type": "repository",
+  "published_at": "2026-02-20T15:10:02Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "Jett是一种专为大型语言模型（LLM）编写而优化的编程语言，使用Rust实现，目前处于早期开发阶段。",
+  "content": "Jett编程语言由vycdev开发，其核心设计目标是优化LLM生成代码的效率和准确性。该语言可能通过简化语法、减少歧义或提供结构化提示来降低LLM生成错误代码的概率。项目使用Rust语言实现，但尚未获得广泛关注（0星、0分支）。目前没有明确的文档或示例说明其具体特性，因此其实际效果和适用场景尚不明确。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "直接针对LLM代码生成优化，属于AI与编程语言交叉领域，对AI驱动的开发工具有潜在参考价值。",
+  "key_points": [
+    "专为LLM编写代码而设计的编程语言",
+    "使用Rust实现，但项目处于早期阶段",
+    "目前无星、无分支，缺乏社区验证"
+  ],
+  "risks": [
+    "项目可能因缺乏维护而停滞",
+    "没有实际案例证明其优化效果",
+    "与现有LLM工作流的兼容性未知"
+  ],
+  "score": 3,
+  "score_reason": "项目概念新颖，但缺乏实际验证、文档和社区支持，成熟度极低。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

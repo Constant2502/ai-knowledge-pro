@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-search-charasoftware-charastudio-public",
+  "title": "charasoftware/charastudio-public",
+  "source": "github_search",
+  "source_url": "https://github.com/charasoftware/charastudio-public",
+  "source_type": "repository",
+  "published_at": "2026-05-22T06:47:54Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "CharaStudio是一款以角色和故事为中心的AIGC全流程创作工具，旨在通过AI技术辅助用户进行角色设计和故事生成。",
+  "content": "该仓库为charasoftware/charastudio-public，是一个面向角色和故事创作的AIGC（人工智能生成内容）端到端工具。它可能集成了大语言模型（LLM）和智能体（Agent）技术，帮助用户从角色设定到故事脚本的完整创作流程。目前项目处于早期阶段，Star和Fork数均为0，无明确语言标签或主题分类。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "直接涉及AIGC（AI生成内容）和角色故事创作，属于AI应用领域，可能依赖LLM和Agent技术。",
+  "key_points": [
+    "专注于角色和故事的AIGC全流程创作",
+    "可能集成LLM和Agent技术",
+    "项目处于早期阶段，无活跃开发迹象"
+  ],
+  "risks": [
+    "项目可能已停止维护或未实际开发",
+    "缺乏技术细节和文档，难以评估实际能力",
+    "零社区关注度，可能无法持续更新"
+  ],
+  "score": 6,
+  "score_reason": "项目概念与AIGC创作工具相关，但缺乏实际代码、文档或社区活跃度，成熟度低。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

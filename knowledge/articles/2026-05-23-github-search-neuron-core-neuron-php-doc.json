@@ -1,0 +1,37 @@
+{
+  "id": "2026-05-23-github-search-neuron-core-neuron-php-doc",
+  "title": "neuron-core/neuron-php-doc",
+  "source": "github_search",
+  "source_url": "https://github.com/neuron-core/neuron-php-doc",
+  "source_type": "repository",
+  "published_at": "2025-09-03T07:07:47Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "Neuron PHP框架文档，一个用于构建AI代理和LLM工作流的PHP框架，支持代理工作流和AI工作流。",
+  "content": "Neuron是一个基于PHP的AI代理框架，旨在帮助开发者构建智能代理和LLM工作流。该仓库包含其官方文档，涵盖了框架的核心概念、API参考、使用示例以及最佳实践。框架支持代理工作流（agentic workflow）和AI工作流（AI workflow），使得在PHP环境中集成大型语言模型和构建自主代理成为可能。文档可能包括如何定义代理行为、管理对话上下文、调用外部工具以及处理多步骤任务。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "PHP",
+    "Agentic Framework"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "直接涉及AI代理、LLM工作流和代理框架，是AI知识库中关于PHP语言实现AI代理的重要资源。",
+  "key_points": [
+    "Neuron是一个PHP AI代理框架，支持构建LLM工作流和代理工作流。",
+    "该仓库包含框架的官方文档，涵盖核心概念、API和最佳实践。",
+    "适用于在PHP环境中集成大型语言模型和自主代理。"
+  ],
+  "risks": [
+    "PHP在AI/LLM领域的使用相对小众，框架可能缺乏社区支持和持续更新。",
+    "文档可能不够详尽或存在过时内容，需结合框架实际版本验证。",
+    "代理工作流的复杂性和LLM的不可预测性可能导致实际应用中的稳定性问题。"
+  ],
+  "score": 8,
+  "score_reason": "该仓库提供了PHP生态中少见的AI代理框架文档，对于希望在PHP项目中集成LLM和代理工作流的开发者具有较高参考价值，但文档本身可能不如主流框架完善。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

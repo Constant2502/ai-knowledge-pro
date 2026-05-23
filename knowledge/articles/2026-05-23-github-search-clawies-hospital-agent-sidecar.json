@@ -1,0 +1,36 @@
+{
+  "id": "2026-05-23-github-search-clawies-hospital-agent-sidecar",
+  "title": "Clawies/hospital-agent-sidecar",
+  "source": "github_search",
+  "source_url": "https://github.com/Clawies/hospital-agent-sidecar",
+  "source_type": "repository",
+  "published_at": "2026-05-19T12:59:29Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "一个基于Go语言开发的医院智能体侧车项目，用于辅助医疗场景中的AI代理功能。",
+  "content": "该项目是一个医院智能体侧车（Agent Sidecar），使用Go语言实现。它可能作为医疗AI系统的辅助组件，提供与医院系统交互的接口或服务。由于描述为空且星标数为0，项目处于早期或未公开阶段。",
+  "tags": [
+    "AI",
+    "Agent",
+    "Go",
+    "Healthcare"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "项目名称和主题涉及AI Agent在医疗领域的应用，属于AI知识库中Agent和行业应用相关的内容。",
+  "key_points": [
+    "项目使用Go语言开发，定位为医院智能体侧车。",
+    "可能用于连接AI代理与医院信息系统。",
+    "当前无描述、无星标，处于早期阶段。"
+  ],
+  "risks": [
+    "项目缺乏描述和文档，无法确认具体功能和实现。",
+    "无社区关注和贡献，可能已停止维护。",
+    "医疗领域应用需考虑数据隐私和合规性，但项目未提及。"
+  ],
+  "score": 3,
+  "score_reason": "项目描述为空，无实际代码或文档内容，无法评估其技术成熟度和实用性。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

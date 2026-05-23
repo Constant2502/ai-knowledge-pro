@@ -1,0 +1,45 @@
+sources:
+  - name: Hacker News Best AI
+    url: https://hnrss.org/best?q=AI
+    category: 综合技术
+    enabled: true
+
+  - name: Lobsters AI/ML
+    url: https://lobste.rs/t/ai.rss
+    category: 综合技术
+    enabled: true
+
+  - name: arXiv cs.AI
+    url: https://rss.arxiv.org/rss/cs.AI
+    category: AI 研究
+    enabled: true
+
+  - name: OpenAI Blog
+    url: https://openai.com/news/rss.xml
+    category: 公司博客
+    enabled: true
+
+  # Anthropic does not consistently expose an official RSS feed for research.
+  # This generated feed should be reviewed before production use.
+  - name: Anthropic Research
+    url: https://raw.githubusercontent.com/0xSMW/rss-feeds/main/feeds/feed_anthropic_research.xml
+    category: 公司博客
+    enabled: false
+
+  # Hugging Face Blog is broad and high-volume; enable selectively.
+  - name: Hugging Face Blog
+    url: https://huggingface.co/blog/feed.xml
+    category: 公司博客
+    enabled: false
+
+  # Chinese community RSS availability should be confirmed before enabling.
+  - name: 机器之心
+    url: https://www.jiqizhixin.com/rss
+    category: 中文社区
+    enabled: false
+
+  # Chinese community RSS availability should be confirmed before enabling.
+  - name: 量子位
+    url: https://www.qbitai.com/feed
+    category: 中文社区
+    enabled: false

@@ -1,0 +1,37 @@
+{
+  "id": "2026-05-23-github-search-kunwarpratap93-ai-video-assistant-with-rag",
+  "title": "kunwarPratap93/AI-Video-Assistant-With-RAG",
+  "source": "github_search",
+  "source_url": "https://github.com/kunwarPratap93/AI-Video-Assistant-With-RAG",
+  "source_type": "repository",
+  "published_at": "2026-05-20T21:51:59Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "这是一个基于RAG技术的AI视频助手项目，使用Python开发，能够通过检索增强生成技术处理视频内容并回答相关问题。",
+  "content": "该项目是一个AI视频助手，结合了RAG（检索增强生成）技术。主要功能包括：\n1. 视频内容处理：能够解析视频中的音频或字幕文本。\n2. 检索增强生成：利用向量数据库存储视频文本片段，通过检索相关上下文来增强LLM的回答。\n3. 交互式问答：用户可针对视频内容提问，系统基于检索到的信息生成答案。\n4. 技术栈：使用Python开发，可能集成LangChain、FAISS等工具。\n\n项目目前处于早期阶段（0星），但展示了RAG在视频领域的典型应用模式。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "RAG",
+    "Video Assistant"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接应用了RAG这一核心AI技术，并涉及LLM、向量检索等关键AI组件，属于AI知识库中典型的应用案例。",
+  "key_points": [
+    "结合RAG技术实现视频内容问答",
+    "使用Python开发，可能集成LangChain等框架",
+    "展示了AI在多媒体内容理解中的应用方向"
+  ],
+  "risks": [
+    "项目活跃度低（0星），可能缺乏持续维护",
+    "视频处理（如语音转文本）的准确性和延迟可能影响体验",
+    "RAG系统对视频长文本的检索效果需要实际验证"
+  ],
+  "score": 6,
+  "score_reason": "项目概念完整，结合了RAG和视频处理，但缺乏实际应用验证和社区关注度（0星），代码成熟度待评估。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

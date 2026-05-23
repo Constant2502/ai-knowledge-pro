@@ -1,0 +1,37 @@
+{
+  "id": "2026-05-23-github-search-nankis-ai-troubleshooter",
+  "title": "Nankis/ai-troubleshooter",
+  "source": "github_search",
+  "source_url": "https://github.com/Nankis/ai-troubleshooter",
+  "source_type": "repository",
+  "published_at": "2026-05-21T13:14:39Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "Nankis/ai-troubleshooter 是一个用 Go 语言编写的 AI 故障排查工具，旨在帮助开发者快速诊断和解决 AI 应用中的常见问题。",
+  "content": "该仓库是一个 GitHub 上的开源项目，使用 Go 语言实现，主要功能是自动化排查 AI 系统（如 LLM 推理、Agent 行为）中的错误和异常。它可能集成了日志分析、模型输出验证、依赖检查等模块，以简化调试流程。由于描述为空，具体实现细节需进一步查看代码。项目当前无星标和分支，更新于 2026 年 5 月，处于早期开发阶段。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "Go",
+    "troubleshooting"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "直接针对 AI 系统的故障排查，涉及 LLM 和 Agent 的常见问题，属于 AI 开发工具链的一部分，对知识库有补充价值。",
+  "key_points": [
+    "使用 Go 语言开发，专注于 AI 故障排查。",
+    "可能涵盖 LLM 推理和 Agent 行为的诊断。",
+    "项目处于早期阶段，社区参与度低。"
+  ],
+  "risks": [
+    "描述为空，功能不明确，可能缺乏实际可用性。",
+    "零星标和分支，项目可能已停滞或无人维护。",
+    "无测试或示例，可靠性存疑。"
+  ],
+  "score": 4,
+  "score_reason": "项目主题与 AI 故障排查相关，但描述缺失、社区活跃度低（0 星），且无明确技术文档或示例，实用性待验证。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

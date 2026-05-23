@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-search-pengxu9-rgb-pivota-agent",
+  "title": "pengxu9-rgb/PIVOTA-Agent",
+  "source": "github_search",
+  "source_url": "https://github.com/pengxu9-rgb/PIVOTA-Agent",
+  "source_type": "repository",
+  "published_at": "2025-11-20T13:36:18Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "PIVOTA-Agent 是一个网关，帮助商家将商品目录和支付系统暴露给数千个AI商业代理，支持ACP/AP2标准。",
+  "content": "该仓库是一个JavaScript项目，旨在作为商家与AI商业代理之间的桥梁。它允许商家通过Pivota平台（兼容ACP/AP2协议）将其商品目录和支付接口开放给大量AI代理，从而实现自动化的商业交互。项目目前星标和分支数均为0，最后更新于2026年5月，可能处于早期开发阶段。",
+  "tags": [
+    "AI",
+    "Agent",
+    "Commerce"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "直接涉及AI代理与商业系统的集成，属于AI应用层的关键基础设施，对AI知识库有价值。",
+  "key_points": [
+    "为商家提供网关，连接AI商业代理。",
+    "支持ACP/AP2协议，实现标准化交互。",
+    "使用JavaScript开发，可能易于集成。"
+  ],
+  "risks": [
+    "项目活跃度低，可能不再维护。",
+    "缺乏安全性和性能评估。",
+    "依赖外部协议（ACP/AP2）的稳定性。"
+  ],
+  "score": 6,
+  "score_reason": "项目概念与AI代理和商业自动化相关，但缺乏实际采用和详细文档，成熟度低。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

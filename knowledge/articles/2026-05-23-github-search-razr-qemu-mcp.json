@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-search-razr-qemu-mcp",
+  "title": "razr/qemu-mcp",
+  "source": "github_search",
+  "source_url": "https://github.com/razr/qemu-mcp",
+  "source_type": "repository",
+  "published_at": "2026-05-07T22:31:38Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "QEMU MCP服务器是一个通过模型上下文协议管理QEMU虚拟机的工具，支持x86/ARM架构的VM生命周期控制、QMP交互和二进制分析，并已Docker化。",
+  "content": "该仓库提供了一个基于模型上下文协议（MCP）的服务器，用于管理和编排QEMU虚拟机。主要功能包括：\n- 控制虚拟机生命周期（启动、停止、暂停等），支持x86和ARM架构。\n- 通过QEMU机器协议（QMP）与虚拟机进行交互，实现高级管理。\n- 提供LLM友好的接口，便于AI模型分析二进制文件。\n- 完全Docker化，确保QEMU二进制文件与qemu.machine Python库的兼容性。\n\n该工具将虚拟化管理与AI代理能力结合，使LLM能够直接操作虚拟机环境，适用于自动化测试、安全分析和动态二进制分析等场景。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该仓库直接实现了MCP服务器，使LLM能够通过标准化协议控制虚拟机，属于AI代理与基础设施交互的典型应用，对AI知识库中关于工具使用和自动化操作的内容有重要补充。",
+  "key_points": [
+    "通过MCP协议让LLM直接管理QEMU虚拟机生命周期",
+    "支持x86和ARM架构，提供QMP交互和二进制分析接口",
+    "完全Docker化，简化部署和兼容性问题"
+  ],
+  "risks": [
+    "项目星数为0，可能缺乏社区验证和长期维护",
+    "QEMU虚拟化操作涉及系统级权限，存在安全风险",
+    "MCP协议本身仍在发展中，接口可能不稳定"
+  ],
+  "score": 7,
+  "score_reason": "该项目将MCP协议与QEMU虚拟化结合，为AI代理提供了直接管理虚拟机的接口，创新性强且实用，但星数为0且无社区参与，成熟度较低。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

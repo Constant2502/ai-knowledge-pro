@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-search-weatherisgood2-ngpt",
+  "title": "weatherisgood2/ngpt",
+  "source": "github_search",
+  "source_url": "https://github.com/weatherisgood2/ngpt",
+  "source_type": "repository",
+  "published_at": "2025-04-21T23:21:59Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "ngpt 是一个轻量级 Python 命令行工具和库，用于与兼容 OpenAI 的 API 交互，支持官方和自托管的大语言模型端点。",
+  "content": "该项目提供了一个简洁的 Python 接口，允许用户通过 CLI 或库方式调用 OpenAI 兼容的 API，包括官方 OpenAI 服务以及自部署的 LLM 端点。其特点包括轻量级设计、GPU 加速支持、以及用于 3D 重建和神经辐射场（NeRF）等深度学习任务的附加功能。项目还涉及余弦归一化、序列化等技术，并集成了 ChatGPT 和 GPT4Free 等主题。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接涉及大语言模型（LLM）的 API 调用和交互，属于 AI 应用开发的基础工具，适合纳入 AI 知识库以支持开发者快速集成 LLM 能力。",
+  "key_points": [
+    "提供轻量级 Python CLI 和库，简化 OpenAI 兼容 API 的调用。",
+    "支持官方 OpenAI 和自托管 LLM 端点，灵活性高。",
+    "包含 GPU 加速和深度学习相关功能（如 NeRF、3D 重建）。"
+  ],
+  "risks": [
+    "项目星数仅 1，社区支持和维护可能不足。",
+    "部分功能（如 3D 重建）与核心 LLM 交互无关，可能分散开发重点。",
+    "依赖外部 API 的可用性和兼容性，存在服务中断风险。"
+  ],
+  "score": 7,
+  "score_reason": "项目专注于 LLM API 交互，功能实用且支持自托管，但星数较少，社区活跃度低，且部分主题（如 3D 重建）与核心 LLM 功能关联较弱。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

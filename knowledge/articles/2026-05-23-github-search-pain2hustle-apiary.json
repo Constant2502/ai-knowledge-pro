@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-search-pain2hustle-apiary",
+  "title": "pain2hustle/APIARY",
+  "source": "github_search",
+  "source_url": "https://github.com/pain2hustle/APIARY",
+  "source_type": "repository",
+  "published_at": "2026-05-21T11:08:00Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "APIARY是一个基于TypeScript开发的AI项目，但描述为空，星标和分支数均为0，可能处于早期阶段或未公开详细信息。",
+  "content": "该仓库名为APIARY，由用户pain2hustle创建，托管在GitHub上。主要编程语言为TypeScript，但仓库描述为空，且未设置任何主题标签。截至数据抓取时间（2026年5月），该项目获得0个星标和0个分支，最后一次更新在2026年5月23日。由于缺乏具体描述和代码内容，无法判断其具体功能或应用场景，可能是一个尚未完善或未公开的AI相关项目。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "虽然项目名称APIARY可能暗示与AI相关（如API编排或AI服务），但缺乏具体描述和代码，无法确认其与AI、LLM或Agent的直接关联，仅凭语言和名称推测属于AI知识库。",
+  "key_points": [
+    "项目使用TypeScript开发，但描述和主题标签为空。",
+    "星标和分支数均为0，表明项目可能处于早期或未公开状态。",
+    "最后一次更新在2026年5月23日，但无实质性进展信息。"
+  ],
+  "risks": [
+    "项目可能已废弃或缺乏维护，因为无任何社区参与。",
+    "缺乏描述和文档，无法评估其功能或可靠性。",
+    "名称APIARY可能误导，实际内容可能与AI无关。"
+  ],
+  "score": 2,
+  "score_reason": "项目描述为空，无星标和分支，缺乏实质性内容，无法评估其技术价值或实用性，因此评分较低。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

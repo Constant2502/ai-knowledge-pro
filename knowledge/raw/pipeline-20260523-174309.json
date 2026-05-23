@@ -1,0 +1,420 @@
+{
+  "run_id": "20260523-174309",
+  "source": "pipeline",
+  "collected_at": "2026-05-23T17:43:12+08:00",
+  "items": [
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "neuron-core/neuron-php-doc",
+      "source_url": "https://github.com/neuron-core/neuron-php-doc",
+      "published_at": "2025-09-03T07:07:47Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "Neuron PHP Framework documentation",
+      "metadata": {
+        "language": null,
+        "stars": 8,
+        "forks": 9,
+        "updated_at": "2026-05-23T09:43:08Z",
+        "topics": [
+          "agentic-framework",
+          "agentic-workflow",
+          "ai",
+          "ai-agent",
+          "ai-framework",
+          "ai-workflow",
+          "llm",
+          "llm-framework",
+          "php"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "DennisDRX/Faraday-Web-Researcher-Agent",
+      "source_url": "https://github.com/DennisDRX/Faraday-Web-Researcher-Agent",
+      "published_at": "2025-04-28T00:18:49Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "Faraday: An Autonomous Web Research Agent (LangGraph/Streamlit). 🕵️♀️ Investigates queries using dynamic tools (Tavily, Google, NewsAPI, etc.), gathers multi-source info, and synthesizes structured reports in a Streamlit UI. Features agentic workflow & source tracking.",
+      "metadata": {
+        "language": "Python",
+        "stars": 9,
+        "forks": 1,
+        "updated_at": "2026-05-23T09:43:04Z",
+        "topics": [
+          "ai-agents",
+          "autonomous-agents",
+          "gemini",
+          "langchain",
+          "langgraph",
+          "llm",
+          "python",
+          "research-agents",
+          "research-tool",
+          "streamlit",
+          "web-research"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "vycdev/jett",
+      "source_url": "https://github.com/vycdev/jett",
+      "published_at": "2026-02-20T15:10:02Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "Jett programming language optimized to be written by LLMs",
+      "metadata": {
+        "language": "Rust",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:43:03Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "razr/qemu-mcp",
+      "source_url": "https://github.com/razr/qemu-mcp",
+      "published_at": "2026-05-07T22:31:38Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "QEMU MCP Server: A Model Context Protocol server for managing and orchestrating QEMU virtual machines. Control VM lifecycles (x86/ARM), interact via QMP, and analyze binaries through an LLM-friendly interface. Fully dockerized to ensure compatibility between QEMU binaries and the qemu.machine Python library.",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:43:02Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Ghost7190/reformed-dave",
+      "source_url": "https://github.com/Ghost7190/reformed-dave",
+      "published_at": "2025-04-27T14:32:22Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "LLM powered chatbot for discussing the Reformed Christian faith (with a lean towards Presbyterianism).",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 1,
+        "updated_at": "2026-05-23T09:42:55Z",
+        "topics": [
+          "ai",
+          "chatbot",
+          "dave-and-bambi",
+          "doctrine",
+          "fnf",
+          "fnf-engine",
+          "fnf-mods",
+          "huggingface",
+          "llm",
+          "mod-support",
+          "nvidia",
+          "presbyterian",
+          "source-code",
+          "tabbyapi"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "kunwarPratap93/AI-Video-Assistant-With-RAG",
+      "source_url": "https://github.com/kunwarPratap93/AI-Video-Assistant-With-RAG",
+      "published_at": "2026-05-20T21:51:59Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:42:47Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "sgl-project/sglang",
+      "source_url": "https://github.com/sgl-project/sglang",
+      "published_at": "2024-01-08T04:15:52Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "SGLang is a high-performance serving framework for large language models and multimodal models.",
+      "metadata": {
+        "language": "Python",
+        "stars": 28140,
+        "forks": 6076,
+        "updated_at": "2026-05-23T09:42:46Z",
+        "topics": [
+          "attention",
+          "blackwell",
+          "cuda",
+          "deepseek",
+          "diffusion",
+          "glm",
+          "gpt-oss",
+          "inference",
+          "llama",
+          "llm",
+          "minimax",
+          "moe",
+          "qwen",
+          "qwen-image",
+          "reinforcement-learning",
+          "transformer",
+          "vlm",
+          "wan"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "pengxu9-rgb/PIVOTA-Agent",
+      "source_url": "https://github.com/pengxu9-rgb/PIVOTA-Agent",
+      "published_at": "2025-11-20T13:36:18Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "Gateway for merchants to expose their catalogs & payments to thousands of AI commerce agents via Pivota (ACP/AP2-ready).",
+      "metadata": {
+        "language": "JavaScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:42:23Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Megh2005/ZeroOps",
+      "source_url": "https://github.com/Megh2005/ZeroOps",
+      "published_at": "2026-01-09T10:21:54Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "ZeroOps is a no-code, AI-powered DevOps platform that lets users visually design infrastructure and automatically generates optimized, production-grade Terraform for Google Cloud. It unifies design, deployment, optimization, migration, and governance into a single intelligent DevOps workflow.",
+      "metadata": {
+        "language": "TypeScript",
+        "stars": 1,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:42:24Z",
+        "topics": [
+          "devops",
+          "gcp",
+          "gcp-automation-gitops",
+          "gemini",
+          "google",
+          "terraform"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Nukee25/vaidya",
+      "source_url": "https://github.com/Nukee25/vaidya",
+      "published_at": "2026-03-26T06:39:01Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "Vaidya is a backend-driven project designed to deliver scalable, reliable, and inclusive technology solutions. Built with Django, Docker, and modern frontend tooling like Vite, it focuses on clean architecture, iterative improvement, and transparent design principles.",
+      "metadata": {
+        "language": "TypeScript",
+        "stars": 0,
+        "forks": 1,
+        "updated_at": "2026-05-23T09:42:10Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "rafay123321/embedding-hallucinations",
+      "source_url": "https://github.com/rafay123321/embedding-hallucinations",
+      "published_at": "2025-04-25T08:49:58Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "This repo shows how foundational model hallucinates and how we can fix such hallucinations using fine-tuning them",
+      "metadata": {
+        "language": "Python",
+        "stars": 1,
+        "forks": 1,
+        "updated_at": "2026-05-23T09:42:08Z",
+        "topics": [
+          "chatgpt",
+          "claude",
+          "embedding-models",
+          "embedding-vectors",
+          "graph",
+          "hallucination",
+          "langchain",
+          "llama2",
+          "msmarco",
+          "openai",
+          "rag",
+          "retrieval-augmented-generation",
+          "sagemaker",
+          "sentence-embeddings"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Sonu-Hansda/Git-Bytes",
+      "source_url": "https://github.com/Sonu-Hansda/Git-Bytes",
+      "published_at": "2025-04-11T06:17:19Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "Google Developer Group Hackathon organized by Arka Jain",
+      "metadata": {
+        "language": "JavaScript",
+        "stars": 1,
+        "forks": 4,
+        "updated_at": "2026-05-23T09:41:42Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "weatherisgood2/ngpt",
+      "source_url": "https://github.com/weatherisgood2/ngpt",
+      "published_at": "2025-04-21T23:21:59Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "A lightweight Python CLI and library for interacting with OpenAI-compatible APIs, supporting both official and self-hosted LLM endpoints.",
+      "metadata": {
+        "language": "Python",
+        "stars": 1,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:41:39Z",
+        "topics": [
+          "3d-reconstruction",
+          "chat-gpt",
+          "chatgpt",
+          "cosine-normalization",
+          "deep-learning",
+          "gpt4free-api",
+          "gpu-acceleration",
+          "graphics-rendering",
+          "llm",
+          "nerf",
+          "neural-radiance-fields",
+          "openai-api",
+          "python",
+          "serialization"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Aashritha-MB/RAG-pdfbot",
+      "source_url": "https://github.com/Aashritha-MB/RAG-pdfbot",
+      "published_at": "2026-05-23T07:59:08Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "RAG-based PDF Question Answering System using LangChain, ChromaDB, OpenRouter and Groq.",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:41:30Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "permaevidence/LocalAgent",
+      "source_url": "https://github.com/permaevidence/LocalAgent",
+      "published_at": "2026-04-13T21:49:59Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "Telegram-based AI agent for local LLM inference. Fork of ConciergeforTelegram, evolving toward filesystem-level machine access (vs. sandboxed documents).",
+      "metadata": {
+        "language": "Swift",
+        "stars": 1,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:43:09Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Nankis/ai-troubleshooter",
+      "source_url": "https://github.com/Nankis/ai-troubleshooter",
+      "published_at": "2026-05-21T13:14:39Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "",
+      "metadata": {
+        "language": "Go",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:43:08Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "pain2hustle/APIARY",
+      "source_url": "https://github.com/pain2hustle/APIARY",
+      "published_at": "2026-05-21T11:08:00Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "",
+      "metadata": {
+        "language": "TypeScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:43:07Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "charasoftware/charastudio-public",
+      "source_url": "https://github.com/charasoftware/charastudio-public",
+      "published_at": "2026-05-22T06:47:54Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "A character and story-centric AIGC end-to-end creation tool.一款以角色和故事为中心的 AIGC 全流程创作工具",
+      "metadata": {
+        "language": null,
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:43:07Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Clawies/hospital-agent-sidecar",
+      "source_url": "https://github.com/Clawies/hospital-agent-sidecar",
+      "published_at": "2026-05-19T12:59:29Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "",
+      "metadata": {
+        "language": "Go",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:43:07Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "amantrex/paisa-agent",
+      "source_url": "https://github.com/amantrex/paisa-agent",
+      "published_at": "2026-05-23T05:25:09Z",
+      "collected_at": "2026-05-23T17:43:09+08:00",
+      "description": "Mid-term penny stock investment tool",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-23T09:43:03Z",
+        "topics": []
+      }
+    }
+  ]
+}

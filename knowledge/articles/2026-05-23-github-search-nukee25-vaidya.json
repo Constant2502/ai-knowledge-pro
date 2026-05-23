@@ -1,0 +1,36 @@
+{
+  "id": "2026-05-23-github-search-nukee25-vaidya",
+  "title": "Nukee25/vaidya",
+  "source": "github_search",
+  "source_url": "https://github.com/Nukee25/vaidya",
+  "source_type": "repository",
+  "published_at": "2026-03-26T06:39:01Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "Vaidya是一个基于Django和Docker的后端驱动项目，专注于提供可扩展、可靠且包容的技术解决方案，并采用现代前端工具Vite。",
+  "content": "Vaidya项目是一个后端驱动的技术解决方案，其核心架构基于Django框架和Docker容器化技术，旨在实现可扩展性、可靠性和包容性。项目采用现代前端构建工具Vite来优化开发体验。设计理念强调清晰的架构、迭代改进和透明的设计原则。该项目在GitHub上公开，使用TypeScript语言开发，目前获得0个星标和1个分支。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目描述和元数据中没有任何与AI、LLM、Agent、RAG或推理直接相关的内容，仅作为通用技术项目被收录，不适合纳入以AI为核心的知识库。",
+  "key_points": [
+    "基于Django和Docker的后端驱动项目",
+    "采用Vite作为前端构建工具",
+    "强调清晰架构、迭代改进和透明设计",
+    "使用TypeScript语言开发，目前星标数为0"
+  ],
+  "risks": [
+    "项目活跃度低（0星标），可能缺乏社区支持和持续维护",
+    "描述中未涉及任何AI相关技术，与知识库主题不匹配",
+    "项目可能仍处于早期开发阶段，功能完整性不确定"
+  ],
+  "score": 2,
+  "score_reason": "项目描述中未提及任何AI、LLM、Agent、RAG或推理相关技术，主要聚焦于通用后端架构和工具链，与AI知识库核心主题关联度极低。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

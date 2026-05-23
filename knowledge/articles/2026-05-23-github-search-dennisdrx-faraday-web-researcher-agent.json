@@ -1,0 +1,38 @@
+{
+  "id": "2026-05-23-github-search-dennisdrx-faraday-web-researcher-agent",
+  "title": "DennisDRX/Faraday-Web-Researcher-Agent",
+  "source": "github_search",
+  "source_url": "https://github.com/DennisDRX/Faraday-Web-Researcher-Agent",
+  "source_type": "repository",
+  "published_at": "2025-04-28T00:18:49Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "Faraday是一个基于LangGraph和Streamlit的自主网络研究代理，能够动态使用多种工具（如Tavily、Google、NewsAPI）进行多源信息收集，并生成结构化报告。",
+  "content": "Faraday是一个开源的自主网络研究代理项目，使用Python编写，基于LangGraph框架构建工作流，并通过Streamlit提供用户界面。其核心功能包括：\n- **自主研究流程**：代理能够接收用户查询，动态选择并调用多种搜索工具（如Tavily、Google搜索、NewsAPI等）进行多源信息收集。\n- **结构化报告生成**：从多个来源综合信息，生成带有来源追踪的结构化研究报告。\n- **技术栈**：使用LangGraph实现代理工作流，Gemini作为底层LLM，LangChain用于工具集成，Streamlit构建交互式UI。\n- **应用场景**：适用于需要深度网络调研、竞品分析、学术研究等场景，可替代手动多源搜索与整理工作。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "LangGraph",
+    "Streamlit",
+    "Research"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接涉及AI代理（Agent）、LLM调用（Gemini）、工具使用（LangChain工具）和自主工作流（LangGraph），是AI在自动化研究领域的典型应用，对知识库中Agent、RAG、推理等主题有参考价值。",
+  "key_points": [
+    "基于LangGraph构建的自主代理工作流，支持动态工具选择与多源信息收集。",
+    "集成Tavily、Google搜索、NewsAPI等多种搜索工具，实现全面网络调研。",
+    "使用Streamlit提供交互式UI，并生成带有来源追踪的结构化报告。"
+  ],
+  "risks": [
+    "项目星数较少（9星），社区活跃度和长期维护性不确定。",
+    "依赖多个外部API（Tavily、Google、NewsAPI），可能面临API限制或成本问题。",
+    "自主代理的决策质量依赖于底层LLM（Gemini）的能力，可能存在幻觉或信息偏差风险。"
+  ],
+  "score": 8,
+  "score_reason": "该项目展示了LLM代理在自动化网络研究中的实际应用，技术栈先进（LangGraph、Gemini），且具备完整的UI和工具集成，但星数较少（9星），成熟度有待验证。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

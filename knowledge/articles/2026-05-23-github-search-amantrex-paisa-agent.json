@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-search-amantrex-paisa-agent",
+  "title": "amantrex/paisa-agent",
+  "source": "github_search",
+  "source_url": "https://github.com/amantrex/paisa-agent",
+  "source_type": "repository",
+  "published_at": "2026-05-23T05:25:09Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "一个基于Python的中期低价股票投资工具，利用AI代理技术辅助选股和投资决策。",
+  "content": "该项目是一个名为paisa-agent的开源工具，专注于中期低价股票投资。它使用Python语言开发，通过AI代理（Agent）技术实现自动化选股和投资策略分析。工具的核心功能包括数据采集、市场分析、风险评估和投资建议生成，旨在帮助投资者在低价股市场中做出更明智的决策。项目目前处于早期开发阶段，Star和Fork数量均为0，更新于2026年5月23日。",
+  "tags": [
+    "AI",
+    "Agent",
+    "Investment"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接使用AI Agent技术构建投资工具，属于AI在金融领域的典型应用，符合知识库对AI、Agent和LLM相关内容的收录标准。",
+  "key_points": [
+    "使用AI Agent技术实现中期低价股票投资策略",
+    "Python开发，开源但社区活跃度低（0 Star）",
+    "功能涵盖数据采集、分析、风险评估和投资建议"
+  ],
+  "risks": [
+    "项目处于早期阶段，功能完整性和稳定性未知",
+    "低价股投资本身高风险，AI辅助可能放大风险",
+    "缺乏实际回测或用户验证，投资建议可靠性存疑"
+  ],
+  "score": 6,
+  "score_reason": "项目概念明确，结合AI Agent与金融投资，但成熟度低、社区关注度低，实际应用价值待验证。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

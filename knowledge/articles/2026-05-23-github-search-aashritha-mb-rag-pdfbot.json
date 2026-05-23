@@ -1,0 +1,40 @@
+{
+  "id": "2026-05-23-github-search-aashritha-mb-rag-pdfbot",
+  "title": "Aashritha-MB/RAG-pdfbot",
+  "source": "github_search",
+  "source_url": "https://github.com/Aashritha-MB/RAG-pdfbot",
+  "source_type": "repository",
+  "published_at": "2026-05-23T07:59:08Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "该项目是一个基于RAG的PDF问答系统，使用LangChain、ChromaDB、OpenRouter和Groq构建，支持用户上传PDF文件并提问。",
+  "content": "该仓库实现了一个检索增强生成（RAG）系统，专门用于PDF文档的问答。技术栈包括：LangChain用于编排LLM调用和文档处理，ChromaDB作为向量数据库存储文档嵌入，OpenRouter和Groq作为LLM后端提供推理能力。用户上传PDF后，系统将文档分块、嵌入并存储，然后根据用户问题检索相关片段，最后通过LLM生成答案。项目代码以Python编写，目前星标数为0，更新于2026年5月。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "RAG",
+    "LangChain",
+    "ChromaDB",
+    "OpenRouter",
+    "Groq"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接涉及AI领域的RAG技术，结合了LLM推理、向量检索和文档处理，是AI知识库中典型的应用型项目。",
+  "key_points": [
+    "使用LangChain、ChromaDB、OpenRouter和Groq构建RAG系统",
+    "支持PDF文档上传和自然语言问答",
+    "代码实现完整，但缺乏测试和性能数据"
+  ],
+  "risks": [
+    "依赖多个外部服务（OpenRouter、Groq），可能受API可用性和成本影响",
+    "项目星标数为0，社区支持和维护不确定",
+    "未提供安全或隐私处理机制，处理敏感PDF时存在风险"
+  ],
+  "score": 7,
+  "score_reason": "项目完整实现了RAG核心流程，使用主流工具链，但缺乏创新性且未提供性能评估或实际应用案例。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

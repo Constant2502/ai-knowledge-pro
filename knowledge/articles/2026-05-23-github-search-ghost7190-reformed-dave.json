@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-search-ghost7190-reformed-dave",
+  "title": "Ghost7190/reformed-dave",
+  "source": "github_search",
+  "source_url": "https://github.com/Ghost7190/reformed-dave",
+  "source_type": "repository",
+  "published_at": "2025-04-27T14:32:22Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "基于LLM的聊天机器人，专注于讨论改革宗基督教信仰（偏向长老会），使用TabbyAPI和HuggingFace模型。",
+  "content": "该项目是一个基于大型语言模型（LLM）的聊天机器人，名为“reformed-dave”，旨在讨论改革宗基督教信仰，尤其偏向长老会（Presbyterianism）教义。项目使用Python开发，依赖TabbyAPI进行模型推理，并可能利用HuggingFace上的模型。代码仓库包含AI聊天机器人、教义讨论、FNF（Friday Night Funkin'）游戏模组支持等主题。项目目前星标数为0，有1个分支，最后更新于2026年5月23日。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接使用LLM（通过TabbyAPI）构建对话式AI应用，涉及模型推理、提示工程等AI核心要素，属于AI知识库中典型的LLM应用案例。",
+  "key_points": [
+    "基于LLM的聊天机器人，专用于改革宗基督教信仰讨论",
+    "使用TabbyAPI进行模型推理，可能集成HuggingFace模型",
+    "项目包含FNF游戏模组支持，技术栈为Python"
+  ],
+  "risks": [
+    "项目星标数和分支数极低，可能缺乏维护或社区支持",
+    "宗教主题可能限制通用性，不适合广泛AI研究参考",
+    "依赖外部API（TabbyAPI），存在服务可用性风险"
+  ],
+  "score": 6,
+  "score_reason": "项目直接使用LLM构建聊天机器人，属于AI应用，但功能专一（宗教讨论），且星标数低，社区活跃度不足。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

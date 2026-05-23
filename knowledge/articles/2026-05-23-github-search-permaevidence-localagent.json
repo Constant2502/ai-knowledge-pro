@@ -1,0 +1,37 @@
+{
+  "id": "2026-05-23-github-search-permaevidence-localagent",
+  "title": "permaevidence/LocalAgent",
+  "source": "github_search",
+  "source_url": "https://github.com/permaevidence/LocalAgent",
+  "source_type": "repository",
+  "published_at": "2026-04-13T21:49:59Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "LocalAgent 是一个基于 Telegram 的 AI 代理，用于本地 LLM 推理，从沙盒文档访问向文件系统级机器访问演进。",
+  "content": "LocalAgent 是 ConciergeforTelegram 的一个分支，专注于本地 LLM 推理，通过 Telegram 界面提供 AI 代理功能。其核心演进方向是从沙盒文档访问转向文件系统级机器访问，这意味着代理将能够直接与底层操作系统交互，而不仅仅是处理隔离的文档。项目使用 Swift 语言开发，目前处于早期阶段（1 星，0 分支），但概念上代表了 AI 代理从受限环境向更广泛系统控制的过渡。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "Telegram",
+    "Local Inference"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该仓库直接涉及 AI 代理、本地 LLM 推理和系统级交互，是 AI 知识库中关于代理演进和本地部署的重要案例。",
+  "key_points": [
+    "基于 Telegram 的 AI 代理，支持本地 LLM 推理",
+    "从沙盒文档访问向文件系统级机器访问演进",
+    "使用 Swift 开发，目前处于早期阶段"
+  ],
+  "risks": [
+    "文件系统级访问带来严重安全风险，需谨慎设计权限控制",
+    "项目活跃度低（仅 1 星），可能缺乏持续维护",
+    "本地推理性能受限于硬件，大规模部署困难"
+  ],
+  "score": 6,
+  "score_reason": "项目概念具有前瞻性（文件系统级访问），但处于极早期阶段，社区关注度低，实际可用性和安全性未经验证。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

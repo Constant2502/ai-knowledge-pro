@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-23-github-search-sgl-project-sglang",
+  "title": "sgl-project/sglang",
+  "source": "github_search",
+  "source_url": "https://github.com/sgl-project/sglang",
+  "source_type": "repository",
+  "published_at": "2024-01-08T04:15:52Z",
+  "collected_at": "2026-05-23T17:43:09+08:00",
+  "summary": "SGLang 是一个高性能的大型语言模型和多模态模型服务框架，支持多种模型架构和硬件优化。",
+  "content": "SGLang 是一个开源的高性能推理和服务框架，专为大型语言模型（LLM）和多模态模型设计。它支持多种模型架构，包括 Transformer、MoE、VLM 等，并针对 CUDA、Blackwell 等硬件进行了优化。该框架还集成了注意力机制、扩散模型和强化学习等功能，适用于 DeepSeek、Qwen、GLM 等主流模型。SGLang 在 GitHub 上拥有超过 2.8 万星标，社区活跃，更新频繁。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "SGLang 直接服务于 LLM 和多模态模型的推理与部署，是 AI 基础设施的关键组件，对提升模型服务效率和降低延迟有重要意义。",
+  "key_points": [
+    "高性能推理框架，支持 LLM 和多模态模型",
+    "兼容多种模型架构和硬件优化",
+    "社区活跃，GitHub 星标超过 2.8 万"
+  ],
+  "risks": [
+    "依赖特定硬件优化，可能限制通用性",
+    "快速迭代可能导致 API 不稳定",
+    "与部分闭源模型的兼容性未知"
+  ],
+  "score": 9,
+  "score_reason": "该框架在推理性能优化、多模型支持和社区活跃度方面表现突出，且与当前 AI 开发趋势高度契合。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}
