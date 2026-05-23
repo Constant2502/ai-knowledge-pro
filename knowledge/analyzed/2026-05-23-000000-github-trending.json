@@ -1,0 +1,168 @@
+{
+  "run_id": "2026-05-23-000000",
+  "source": "github_trending",
+  "analyzed_at": "2026-05-23T00:10:00Z",
+  "items": [
+    {
+      "repo_name": "anthropics/claude-plugins-official",
+      "repo_url": "https://github.com/anthropics/claude-plugins-official",
+      "title": "anthropics/claude-plugins-official",
+      "summary": "Anthropic's official Claude Code plugin reference implementation, useful for understanding how agent plugins should be structured and integrated.",
+      "tags": {
+        "domain": "Agent",
+        "artifact_type": "framework",
+        "maturity": "usable"
+      },
+      "key_points": [
+        "Provides official reference patterns for Claude Code plugins.",
+        "Useful for teams building agent tool integrations."
+      ],
+      "risks": [
+        "Reference implementations can change as Claude Code plugin APIs evolve.",
+        "May be tightly coupled to Anthropic's own tooling assumptions."
+      ],
+      "tagging_reason": "The project is explicitly about Claude Code plugins, placing it in the AI agent tooling domain."
+    },
+    {
+      "repo_name": "colbymchenry/codegraph",
+      "repo_url": "https://github.com/colbymchenry/codegraph",
+      "title": "colbymchenry/codegraph",
+      "summary": "A Python package that builds graph-based codebase context for semantic code search, impact analysis, and AI-assisted code understanding.",
+      "tags": {
+        "domain": "Agent",
+        "artifact_type": "tool",
+        "maturity": "experimental"
+      },
+      "key_points": [
+        "Converts codebases into graph context that AI coding tools can consume.",
+        "Targets semantic search and impact analysis workflows."
+      ],
+      "risks": [
+        "Graph quality depends on language support and parsing depth.",
+        "May require integration work before it is useful in existing engineering workflows."
+      ],
+      "tagging_reason": "The visible description emphasizes AI-powered code understanding and semantic code search."
+    },
+    {
+      "repo_name": "rohitg00/ai-engineering-from-scratch",
+      "repo_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "title": "rohitg00/ai-engineering-from-scratch",
+      "summary": "A notebook-based learning resource that explains AI engineering concepts from scratch.",
+      "tags": {
+        "domain": "LLM",
+        "artifact_type": "repo",
+        "maturity": "usable"
+      },
+      "key_points": [
+        "Useful as structured learning material for AI engineering fundamentals.",
+        "Notebook format makes concepts inspectable and runnable."
+      ],
+      "risks": [
+        "Educational coverage may lag behind fast-moving production practices.",
+        "Quality depends on notebook completeness and maintenance."
+      ],
+      "tagging_reason": "The repository is explicitly about AI engineering concepts."
+    },
+    {
+      "repo_name": "ChromeDevTools/chrome-devtools-mcp",
+      "repo_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "title": "ChromeDevTools/chrome-devtools-mcp",
+      "summary": "An MCP integration that exposes Chrome DevTools capabilities to coding agents.",
+      "tags": {
+        "domain": "Agent",
+        "artifact_type": "tool",
+        "maturity": "usable"
+      },
+      "key_points": [
+        "Connects browser debugging capabilities to agent workflows.",
+        "Could improve web development agents that need runtime page inspection."
+      ],
+      "risks": [
+        "Browser automation and DevTools permissions may introduce security concerns.",
+        "Agent reliability depends on stable MCP and DevTools integration behavior."
+      ],
+      "tagging_reason": "The project is described as Chrome DevTools for coding agents and uses MCP."
+    },
+    {
+      "repo_name": "dotnet/skills",
+      "repo_url": "https://github.com/dotnet/skills",
+      "title": "dotnet/skills",
+      "summary": "A Microsoft-authored repository collecting MCP server instructions, relevant to standardizing agent tool access in the .NET ecosystem.",
+      "tags": {
+        "domain": "Agent",
+        "artifact_type": "repo",
+        "maturity": "usable"
+      },
+      "key_points": [
+        "Centralizes MCP server instructions from Microsoft.",
+        "Can help agent builders discover and use .NET-related MCP capabilities."
+      ],
+      "risks": [
+        "Instruction repositories may be documentation-heavy rather than executable.",
+        "Value depends on the breadth and freshness of covered MCP servers."
+      ],
+      "tagging_reason": "MCP server instructions are part of the AI agent integration ecosystem."
+    },
+    {
+      "repo_name": "Lum1104/Understand-Anything",
+      "repo_url": "https://github.com/Lum1104/Understand-Anything",
+      "title": "Lum1104/Understand-Anything",
+      "summary": "An open-source AI platform aimed at helping users understand arbitrary content.",
+      "tags": {
+        "domain": "LLM",
+        "artifact_type": "tool",
+        "maturity": "experimental"
+      },
+      "key_points": [
+        "Positions itself as a broad AI understanding platform.",
+        "Likely relevant for knowledge ingestion or content comprehension workflows."
+      ],
+      "risks": [
+        "Broad positioning may hide unclear product boundaries.",
+        "Requires deeper README review before judging production usefulness."
+      ],
+      "tagging_reason": "The visible description explicitly calls it an open-source AI platform."
+    },
+    {
+      "repo_name": "can1357/oh-my-pi",
+      "repo_url": "https://github.com/can1357/oh-my-pi",
+      "title": "can1357/oh-my-pi",
+      "summary": "A C project described as GPT-oss powered network inference, pointing to lightweight or networked model inference experimentation.",
+      "tags": {
+        "domain": "Inference",
+        "artifact_type": "tool",
+        "maturity": "experimental"
+      },
+      "key_points": [
+        "Highlights GPT-powered inference in a low-level C project.",
+        "May be relevant for edge or network inference experiments."
+      ],
+      "risks": [
+        "The visible metadata is terse, so technical scope is uncertain.",
+        "C-based inference tooling may have setup and portability challenges."
+      ],
+      "tagging_reason": "The project description references GPT-powered network inference."
+    },
+    {
+      "repo_name": "karpathy/nn-zero-to-hero",
+      "repo_url": "https://github.com/karpathy/nn-zero-to-hero",
+      "title": "karpathy/nn-zero-to-hero",
+      "summary": "A widely known neural network learning resource that teaches model fundamentals through notebooks.",
+      "tags": {
+        "domain": "LLM",
+        "artifact_type": "repo",
+        "maturity": "production_ready"
+      },
+      "key_points": [
+        "Strong educational value for understanding neural network foundations.",
+        "Notebook-based material is easy to inspect and reuse for learning."
+      ],
+      "risks": [
+        "It is primarily educational rather than a production library.",
+        "May not cover the newest agent or LLM application engineering patterns."
+      ],
+      "tagging_reason": "The repository focuses on neural network fundamentals, which are core AI model foundations."
+    }
+  ],
+  "failed_items": []
+}
