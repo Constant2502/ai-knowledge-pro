@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.codex/hooks/validate_articles_after_tool.py\"",
+            "timeout": 30,
+            "statusMessage": "Validating knowledge article JSON"
+          }
+        ]
+      }
+    ]
+  }
+}
