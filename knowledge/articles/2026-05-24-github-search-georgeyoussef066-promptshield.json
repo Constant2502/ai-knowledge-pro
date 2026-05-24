@@ -1,0 +1,34 @@
+{
+  "id": "2026-05-24-github-search-georgeyoussef066-promptshield",
+  "title": "Georgeyoussef066/promptshield",
+  "source": "github_search",
+  "source_url": "https://github.com/Georgeyoussef066/promptshield",
+  "source_type": "repository",
+  "published_at": "2026-01-31T12:32:27Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "PromptShield是一个用于保护LLM应用免受提示注入和数据泄露的实时防御框架，支持Python和C#。",
+  "content": "PromptShield是一个开源框架，专注于保护大型语言模型（LLM）应用的安全性。它提供实时防护，防止提示注入攻击和数据泄露。该框架支持Python和C#语言，并包含命令行工具（CLI），便于集成到开发流程中。项目主题涵盖AI安全、合规性、内容安全、开发者工具等，旨在增强LLM应用的鲁棒性。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该仓库专注于LLM应用的安全防护，涉及提示注入防御和数据泄露保护，是AI安全领域的关键组件，适合纳入AI知识库。",
+  "key_points": [
+    "实时防护提示注入和数据泄露",
+    "支持Python和C#语言",
+    "包含CLI工具，便于集成"
+  ],
+  "risks": [
+    "项目星标数为0，可能缺乏社区验证",
+    "未提供详细文档或示例，实用性待评估"
+  ],
+  "score": 8,
+  "score_reason": "项目直接针对LLM安全防护，主题明确且实用，但星标数为0，可能处于早期阶段。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

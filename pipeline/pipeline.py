@@ -20,8 +20,10 @@ import httpx
 
 try:
     from .model_client import create_provider, chat_with_retry
+    from .model_client import tracker as cost_tracker
 except ImportError:
     from model_client import create_provider, chat_with_retry
+    from model_client import tracker as cost_tracker
 
 
 LOGGER = logging.getLogger(__name__)
@@ -138,6 +140,7 @@ class PipelineResult:
     analyzed_count: int
     saved_count: int
     skipped_duplicate_count: int
+    cost_report: dict[str, Any]
 
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
@@ -219,6 +222,7 @@ def run_pipeline(
     run_id = run_id or build_run_id()
     started_at = started_at or now_iso()
     collected_at = started_at
+    cost_tracker.reset()
     LOGGER.info("Starting pipeline run_id=%s sources=%s", run_id, ",".join(sources))
 
     collected_items = collect_items(
@@ -248,6 +252,7 @@ def run_pipeline(
 
     article_files = save_articles(article_records, dry_run=dry_run)
     LOGGER.info("Saved %s article files", len(article_files))
+    cost_report = cost_tracker.report()
 
     return PipelineResult(
         run_id=run_id,
@@ -262,6 +267,7 @@ def run_pipeline(
         analyzed_count=len(analyzed_items),
         saved_count=len(article_files),
         skipped_duplicate_count=skipped_duplicate_count,
+        cost_report=cost_report,
     )
 
 
@@ -914,6 +920,12 @@ def log_result(result: PipelineResult, dry_run: bool) -> None:
         result.saved_count,
         result.skipped_duplicate_count,
     )
+    LOGGER.info(
+        "LLM cost summary: calls=%s total_tokens=%s estimated_cost_cny=%.8f",
+        result.cost_report.get("call_count", 0),
+        result.cost_report.get("total_tokens", 0),
+        float(result.cost_report.get("estimated_cost_cny", 0.0)),
+    )
     if result.raw_file:
         LOGGER.info("Raw file: %s", result.raw_file)
     if result.article_files:
@@ -984,6 +996,7 @@ def build_run_log_content(result: PipelineResult) -> str:
     raw_file = format_optional_path(result.raw_file)
     article_output = format_article_output(result.article_files)
     article_list = format_article_file_list(result.article_files)
+    cost_report = format_cost_report(result.cost_report)
     sources = ", ".join(result.sources)
 
     return (
@@ -1014,7 +1027,8 @@ def build_run_log_content(result: PipelineResult) -> str:
         f"- raw 输出：{raw_file}\n\n"
         "## analyze 阶段\n\n"
         "- 分析方式：调用 `pipeline/model_client.py` 中的 LLM 客户端\n"
-        f"- 成功分析条目数：{result.analyzed_count}\n\n"
+        f"- 成功分析条目数：{result.analyzed_count}\n"
+        f"{cost_report}\n"
         "## organize 阶段\n\n"
         "- 处理方式：按 `source_url` 去重，"
         "格式化为标准知识条目 JSON\n"
@@ -1063,6 +1077,30 @@ def format_article_file_list(article_files: Sequence[Path]) -> str:
         lines.append(f"- `{relative_path(path)}`")
     lines.append("")
     return "\n".join(lines) + "\n"
+
+
+def format_cost_report(report: dict[str, Any]) -> str:
+    """Format the LLM cost report for Markdown logs."""
+    provider_costs = report.get("provider_costs_cny", {})
+    if isinstance(provider_costs, dict) and provider_costs:
+        provider_cost_text = ", ".join(
+            f"{provider}: {float(cost):.8f} 元"
+            for provider, cost in sorted(provider_costs.items())
+        )
+    else:
+        provider_cost_text = "无"
+
+    return (
+        f"- LLM 调用次数：{int(report.get('call_count', 0))}\n"
+        f"- prompt tokens：{int(report.get('prompt_tokens', 0))}\n"
+        f"- prompt cache hit tokens："
+        f"{int(report.get('prompt_cache_hit_tokens', 0))}\n"
+        f"- completion tokens：{int(report.get('completion_tokens', 0))}\n"
+        f"- total tokens：{int(report.get('total_tokens', 0))}\n"
+        f"- 估算用量次数：{int(report.get('estimated_call_count', 0))}\n"
+        f"- 估算成本：`{float(report.get('estimated_cost_cny', 0.0)):.8f} 元`\n"
+        f"- Provider 成本：`{provider_cost_text}`\n\n"
+    )
 
 
 def relative_path(path: Path) -> str:

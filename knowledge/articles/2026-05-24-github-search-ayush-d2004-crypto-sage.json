@@ -1,0 +1,38 @@
+{
+  "id": "2026-05-24-github-search-ayush-d2004-crypto-sage",
+  "title": "Ayush-D2004/Crypto-Sage",
+  "source": "github_search",
+  "source_url": "https://github.com/Ayush-D2004/Crypto-Sage",
+  "source_type": "repository",
+  "published_at": "2026-05-24T13:08:50Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "Crypto-Sage是一个基于多智能体AI的Web3和加密货币新闻研究工具，使用Python开发。",
+  "content": "Crypto-Sage是一个多智能体AI工具，专门用于研究Web3和加密货币领域的最新新闻。该项目使用Python语言开发，旨在通过多个AI代理协同工作，自动收集、分析和总结加密货币相关的新闻和信息。该工具可以帮助用户快速了解Web3和加密市场动态，提高信息获取效率。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "Multi-agent",
+    "Web3",
+    "Crypto"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接涉及多智能体AI系统在Web3和加密货币新闻研究中的应用，属于AI Agent在垂直领域的实践，符合AI知识库对Agent和LLM应用案例的收录需求。",
+  "key_points": [
+    "多智能体AI架构用于加密货币新闻研究",
+    "专注于Web3和加密领域的信息聚合与分析",
+    "Python实现，适合作为AI Agent应用案例参考"
+  ],
+  "risks": [
+    "项目处于早期阶段，缺乏实际运行数据和效果验证",
+    "加密货币领域信息噪音大，AI代理的准确性可能受限",
+    "未明确使用的LLM或Agent框架，技术实现细节不透明"
+  ],
+  "score": 6,
+  "score_reason": "项目概念清晰，聚焦于多智能体AI在金融信息领域的应用，但缺乏实际代码实现细节、用户反馈和社区活跃度，且未提及具体LLM或Agent框架。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

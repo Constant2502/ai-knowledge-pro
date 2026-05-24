@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-24-github-search-notforyou23-home23",
+  "title": "notforyou23/home23",
+  "source": "github_search",
+  "source_url": "https://github.com/notforyou23/home23",
+  "source_type": "repository",
+  "published_at": "2026-04-09T19:51:22Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "notforyou23/home23 是一个可安装的AI操作系统，具备持久化智能体和“活的大脑”特性，基于JavaScript开发。",
+  "content": "该仓库描述了一个名为“home23”的AI操作系统，核心创新在于持久化智能体（persistent agents）和“活的大脑”（living brains）概念。项目使用JavaScript实现，可能涉及智能体的长期记忆、自主决策或持续学习机制。尽管星标数较少（11星），但概念新颖，可能探索AI操作系统与智能体持久化的前沿方向。",
+  "tags": [
+    "AI",
+    "Agent",
+    "Operating System"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "直接涉及AI操作系统和持久化智能体，属于AI Agent和系统架构的前沿探索，对知识库中智能体持久化、自主系统方向有参考价值。",
+  "key_points": [
+    "提出可安装的AI操作系统概念，强调持久化智能体。",
+    "引入“活的大脑”隐喻，可能指代动态记忆或持续学习。",
+    "使用JavaScript实现，可能面向开发者或边缘设备。"
+  ],
+  "risks": [
+    "项目处于早期阶段，缺乏详细文档和实际验证。",
+    "持久化智能体的实现复杂度和资源消耗可能较高。",
+    "“活的大脑”概念定义模糊，可能难以落地。"
+  ],
+  "score": 6,
+  "score_reason": "概念具有创新性（持久化智能体+活大脑），但项目成熟度低（星标少、无主题标签），实际应用和文档尚不明确。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

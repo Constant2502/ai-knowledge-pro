@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-24-github-search-najinut-aether",
+  "title": "NajiNut/aether",
+  "source": "github_search",
+  "source_url": "https://github.com/NajiNut/aether",
+  "source_type": "repository",
+  "published_at": "2021-12-12T15:35:26Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "Aether是一个用于企业AI应用的低延迟网关，专注于安全、合规和审计，支持LLM和聊天机器人。",
+  "content": "Aether是一个开源项目，旨在为企业级AI应用提供治理和安全性。它作为一个低延迟网关，确保AI系统的安全、合规和可审计性。项目使用Go语言开发，支持Hugo和Vue等前端框架，并集成了OpenAI等LLM服务。主要功能包括：1）安全策略执行，防止数据泄露；2）合规性检查，满足企业监管要求；3）审计日志记录，追踪所有AI交互。适用于构建企业聊天机器人、讨论平台等场景。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "直接涉及LLM网关、企业AI安全与合规，属于AI基础设施关键组件。",
+  "key_points": [
+    "低延迟AI网关，保障企业安全与合规",
+    "支持OpenAI等LLM集成",
+    "提供审计日志和策略执行功能"
+  ],
+  "risks": [
+    "项目星标数为0，社区活跃度低",
+    "更新日期为未来时间，可能数据异常",
+    "缺乏实际部署案例和文档"
+  ],
+  "score": 7,
+  "score_reason": "项目专注于AI治理和安全，但星标数为0且更新于2026年（未来时间），存在不确定性。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

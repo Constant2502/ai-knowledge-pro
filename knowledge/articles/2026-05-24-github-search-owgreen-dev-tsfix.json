@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-24-github-search-owgreen-dev-tsfix",
+  "title": "owgreen-dev/tsfix",
+  "source": "github_search",
+  "source_url": "https://github.com/owgreen-dev/tsfix",
+  "source_type": "repository",
+  "published_at": "2026-05-06T01:11:41Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "tsfix是一个库感知的TypeScript错误修复工具，专为LLM生成的代码设计，结合确定性VS Code快速修复和单文件LLM修复，在真实基准测试中达到98.6%的成功率，每次修复成本低于0.005美元。",
+  "content": "tsfix是一个针对LLM生成代码的TypeScript错误恢复工具，具有以下特点：\n- **库感知**：能够理解项目依赖和类型定义，提供更准确的修复建议。\n- **双重修复机制**：结合VS Code的确定性快速修复（Quick Fix）和单文件LLM修复（mend），提高修复成功率。\n- **高性能低成本**：在真实世界基准测试中达到98.6%的修复率，每次修复成本低于0.005美元。\n- **支持多种LLM**：兼容Claude、OpenAI等主流模型。\n- **自动化代码修复**：适用于agentic工作流和codemod场景。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "tsfix专注于解决LLM生成代码中的类型错误，是AI代码生成后处理的关键环节，属于AI工程化工具链的重要组成部分，对提升LLM代码质量和可用性有直接贡献。",
+  "key_points": [
+    "库感知的TypeScript错误修复，理解项目依赖和类型定义",
+    "结合确定性快速修复和LLM修复，实现98.6%修复率",
+    "每次修复成本低于0.005美元，支持Claude和OpenAI等模型"
+  ],
+  "risks": [
+    "项目尚未获得社区关注（0星），可能存在未发现的缺陷或局限性",
+    "依赖外部LLM服务，可能引入额外延迟和成本波动",
+    "修复质量可能因代码复杂度和库版本差异而下降"
+  ],
+  "score": 9,
+  "score_reason": "该工具直接针对LLM生成代码的常见问题（TypeScript错误）提供高效、低成本的自动化修复方案，具有实际应用价值和创新性，但尚未获得广泛社区验证（0星）。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

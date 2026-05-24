@@ -1,0 +1,37 @@
+{
+  "id": "2026-05-24-github-search-clawhubmx-claw-bun-mcp",
+  "title": "clawhubmx/claw-bun-mcp",
+  "source": "github_search",
+  "source_url": "https://github.com/clawhubmx/claw-bun-mcp",
+  "source_type": "repository",
+  "published_at": "2026-05-22T03:34:54Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "clawhubmx/claw-bun-mcp 是一个基于浏览器的 MCP（模型上下文协议）技能项目，使用 JavaScript 实现，旨在通过浏览器环境提供模型上下文协议的相关功能。",
+  "content": "该项目是一个 GitHub 仓库，名称为 clawhubmx/claw-bun-mcp，描述为“基于浏览器的 MCP 技能”。MCP 是模型上下文协议（Model Context Protocol）的缩写，通常用于 AI 模型与外部工具或数据源的交互。项目使用 JavaScript 语言开发，目前获得 0 星和 0 个 fork，最后更新于 2026 年 5 月 24 日。由于描述简短且无主题标签，具体功能尚不明确，但推测其可能涉及在浏览器中运行 MCP 技能，以支持 AI 模型的上下文获取或工具调用。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "MCP",
+    "浏览器"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "MCP 是 AI 领域的重要协议，用于模型与外部系统交互，该项目直接涉及 MCP 技能，与 AI 知识库主题相关，但信息量有限。",
+  "key_points": [
+    "项目实现基于浏览器的 MCP 技能，使用 JavaScript 语言。",
+    "MCP 协议用于 AI 模型与外部工具或数据源的交互。",
+    "项目目前无星标和 fork，社区活跃度低。"
+  ],
+  "risks": [
+    "描述过于简短，无法评估实际功能和可用性。",
+    "项目可能已停止维护或仅为实验性原型。",
+    "缺乏文档和示例，难以集成或使用。"
+  ],
+  "score": 3,
+  "score_reason": "项目描述过于简略，缺乏具体实现细节、文档或示例，且无星标和 fork，表明社区关注度低，实用性或成熟度不足。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

@@ -36,6 +36,8 @@ class Usage:
         estimated: Whether the token count was estimated locally rather than
             reported by the provider.
         cost_usd: Estimated USD cost for this request.
+        prompt_cache_hit_tokens: Number of input tokens served from cache.
+        prompt_cache_miss_tokens: Number of input tokens not served from cache.
     """
 
     prompt_tokens: int
@@ -43,6 +45,8 @@ class Usage:
     total_tokens: int
     estimated: bool
     cost_usd: float
+    prompt_cache_hit_tokens: int = 0
+    prompt_cache_miss_tokens: int = 0
 
 
 @dataclass(frozen=True)
@@ -72,6 +76,217 @@ class ProviderConfig:
     default_model: str
     input_usd_per_1m_tokens: float
     output_usd_per_1m_tokens: float
+
+
+@dataclass(frozen=True)
+class TokenPricing:
+    """Per-million-token pricing in CNY."""
+
+    input_cny_per_1m_tokens: float
+    output_cny_per_1m_tokens: float
+    cached_input_cny_per_1m_tokens: float | None = None
+
+
+@dataclass(frozen=True)
+class CostRecord:
+    """One tracked LLM API call cost record."""
+
+    provider: str
+    model: str | None
+    prompt_tokens: int
+    completion_tokens: int
+    total_tokens: int
+    prompt_cache_hit_tokens: int
+    prompt_cache_miss_tokens: int
+    estimated: bool
+    cost_cny: float
+
+
+DEFAULT_USD_TO_CNY_RATE = 7.2
+
+# Public pricing checked on 2026-05-24. OpenAI USD prices are converted
+# with DEFAULT_USD_TO_CNY_RATE for local CNY reporting.
+DEFAULT_CNY_PRICING_BY_PROVIDER: dict[str, TokenPricing] = {
+    "deepseek": TokenPricing(
+        input_cny_per_1m_tokens=1.0,
+        output_cny_per_1m_tokens=2.0,
+        cached_input_cny_per_1m_tokens=0.02,
+    ),
+    "qwen": TokenPricing(
+        input_cny_per_1m_tokens=0.8,
+        output_cny_per_1m_tokens=2.0,
+    ),
+    "openai": TokenPricing(
+        input_cny_per_1m_tokens=round(1.75 * DEFAULT_USD_TO_CNY_RATE, 6),
+        output_cny_per_1m_tokens=round(14.0 * DEFAULT_USD_TO_CNY_RATE, 6),
+        cached_input_cny_per_1m_tokens=round(
+            0.175 * DEFAULT_USD_TO_CNY_RATE,
+            6,
+        ),
+    ),
+}
+
+DEFAULT_CNY_PRICING_BY_MODEL: dict[str, TokenPricing] = {
+    "deepseek-chat": DEFAULT_CNY_PRICING_BY_PROVIDER["deepseek"],
+    "deepseek-v4-flash": DEFAULT_CNY_PRICING_BY_PROVIDER["deepseek"],
+    "qwen-plus": DEFAULT_CNY_PRICING_BY_PROVIDER["qwen"],
+    "qwen-plus-latest": DEFAULT_CNY_PRICING_BY_PROVIDER["qwen"],
+    "gpt-5-codex": TokenPricing(
+        input_cny_per_1m_tokens=round(1.25 * DEFAULT_USD_TO_CNY_RATE, 6),
+        output_cny_per_1m_tokens=round(10.0 * DEFAULT_USD_TO_CNY_RATE, 6),
+        cached_input_cny_per_1m_tokens=round(
+            0.125 * DEFAULT_USD_TO_CNY_RATE,
+            6,
+        ),
+    ),
+    "gpt-5.2-codex": DEFAULT_CNY_PRICING_BY_PROVIDER["openai"],
+    "gpt-5.3-codex": DEFAULT_CNY_PRICING_BY_PROVIDER["openai"],
+}
+
+COST_PROVIDER_ALIASES = {
+    "deepseek": "deepseek",
+    "qwen": "qwen",
+    "dashscope": "qwen",
+    "openai": "openai",
+    "openai-codex": "openai",
+    "openai_codex": "openai",
+    "codex": "openai",
+}
+
+
+class CostTracker:
+    """Track LLM token usage and estimated CNY cost."""
+
+    def __init__(
+        self,
+        pricing_by_provider: dict[str, TokenPricing] | None = None,
+        pricing_by_model: dict[str, TokenPricing] | None = None,
+    ) -> None:
+        """Initialize the cost tracker.
+
+        Args:
+            pricing_by_provider: Optional provider-level price table.
+            pricing_by_model: Optional model-level price table.
+        """
+        self.pricing_by_provider = dict(
+            pricing_by_provider or DEFAULT_CNY_PRICING_BY_PROVIDER
+        )
+        self.pricing_by_model = dict(
+            pricing_by_model or DEFAULT_CNY_PRICING_BY_MODEL
+        )
+        self.records: list[CostRecord] = []
+
+    def record(
+        self,
+        usage: Usage,
+        provider: str,
+        model: str | None = None,
+    ) -> None:
+        """Record one successful LLM API call.
+
+        Args:
+            usage: Normalized token usage.
+            provider: Provider name or alias.
+            model: Optional model name for more precise pricing.
+        """
+        provider_key = normalize_cost_provider(provider)
+        pricing = self.pricing_for(provider_key=provider_key, model=model)
+        cost_cny = calculate_cost_cny(
+            usage=usage,
+            pricing=pricing,
+        )
+        self.records.append(
+            CostRecord(
+                provider=provider_key,
+                model=model,
+                prompt_tokens=usage.prompt_tokens,
+                completion_tokens=usage.completion_tokens,
+                total_tokens=usage.total_tokens,
+                prompt_cache_hit_tokens=usage.prompt_cache_hit_tokens,
+                prompt_cache_miss_tokens=usage.prompt_cache_miss_tokens,
+                estimated=usage.estimated,
+                cost_cny=cost_cny,
+            )
+        )
+
+    def estimated_cost(self, provider: str | None = None) -> float:
+        """Return estimated accumulated cost in CNY.
+
+        Args:
+            provider: Optional provider name or alias. If omitted, all
+                providers are included.
+
+        Returns:
+            Estimated cost in CNY.
+        """
+        records = self.matching_records(provider)
+        return round(sum(record.cost_cny for record in records), 8)
+
+    def report(self, provider: str | None = None) -> dict[str, Any]:
+        """Log and return a cost report.
+
+        Args:
+            provider: Optional provider name or alias. If omitted, all
+                providers are included.
+
+        Returns:
+            A structured report dictionary.
+        """
+        records = self.matching_records(provider)
+        report = build_cost_report(records)
+        self.log_report(report=report, provider=provider)
+        return report
+
+    def reset(self) -> None:
+        """Clear all tracked cost records."""
+        self.records.clear()
+
+    def matching_records(self, provider: str | None) -> list[CostRecord]:
+        """Return records filtered by optional provider."""
+        if provider is None:
+            return list(self.records)
+
+        provider_key = normalize_cost_provider(provider)
+        return [
+            record
+            for record in self.records
+            if record.provider == provider_key
+        ]
+
+    def pricing_for(
+        self,
+        provider_key: str,
+        model: str | None,
+    ) -> TokenPricing:
+        """Return model-specific pricing if available, else provider pricing."""
+        if model:
+            model_key = model.strip().lower()
+            model_pricing = self.pricing_by_model.get(model_key)
+            if model_pricing is not None:
+                return model_pricing
+
+        try:
+            return self.pricing_by_provider[provider_key]
+        except KeyError as exc:
+            raise ValueError(
+                f"No CNY pricing configured for provider '{provider_key}'."
+            ) from exc
+
+    def log_report(self, report: dict[str, Any], provider: str | None) -> None:
+        """Log a compact cost report."""
+        label = provider or "all"
+        LOGGER.info(
+            "LLM cost report provider=%s calls=%s prompt_tokens=%s "
+            "cache_hit_tokens=%s completion_tokens=%s estimated_calls=%s "
+            "estimated_cost_cny=%.8f",
+            label,
+            report["call_count"],
+            report["prompt_tokens"],
+            report["prompt_cache_hit_tokens"],
+            report["completion_tokens"],
+            report["estimated_call_count"],
+            report["estimated_cost_cny"],
+        )
 
 
 class LLMClientError(RuntimeError):
@@ -154,12 +369,22 @@ class OpenAICompatibleProvider(LLMProvider):
             output_usd_per_1m_tokens=self.config.output_usd_per_1m_tokens,
         )
 
-        return LLMResponse(
+        llm_response = LLMResponse(
             content=content,
             usage=usage,
             provider=self.config.name,
             model=self.model,
         )
+        try:
+            tracker.record(
+                usage=usage,
+                provider=llm_response.provider,
+                model=llm_response.model,
+            )
+        except ValueError as exc:
+            LOGGER.warning("Failed to record LLM cost: %s", exc)
+
+        return llm_response
 
     def _post_chat_completions(self, payload: dict[str, Any]) -> dict[str, Any]:
         """POST a request to the provider chat completions endpoint."""
@@ -217,6 +442,89 @@ PROVIDER_ALIASES = {
     "openai-codex": "openai-codex",
     "codex": "openai-codex",
 }
+
+
+tracker = CostTracker()
+
+
+def normalize_cost_provider(provider: str) -> str:
+    """Normalize provider names for cost tracking."""
+    normalized_provider = provider.strip().lower()
+    provider_key = COST_PROVIDER_ALIASES.get(normalized_provider)
+    if provider_key is None:
+        supported = ", ".join(sorted(DEFAULT_CNY_PRICING_BY_PROVIDER))
+        raise ValueError(
+            f"Unsupported cost provider '{provider}'. "
+            f"Supported providers: {supported}."
+        )
+    return provider_key
+
+
+def calculate_cost_cny(usage: Usage, pricing: TokenPricing) -> float:
+    """Calculate estimated request cost in CNY."""
+    cache_hit_tokens = usage.prompt_cache_hit_tokens
+    cache_miss_tokens = usage.prompt_cache_miss_tokens
+
+    if cache_hit_tokens <= 0 and cache_miss_tokens <= 0:
+        cache_miss_tokens = usage.prompt_tokens
+
+    if pricing.cached_input_cny_per_1m_tokens is None:
+        input_cost = (
+            usage.prompt_tokens / 1_000_000
+        ) * pricing.input_cny_per_1m_tokens
+    else:
+        input_cost = (
+            cache_miss_tokens / 1_000_000
+        ) * pricing.input_cny_per_1m_tokens
+        input_cost += (
+            cache_hit_tokens / 1_000_000
+        ) * pricing.cached_input_cny_per_1m_tokens
+
+    output_cost = (
+        usage.completion_tokens / 1_000_000
+    ) * pricing.output_cny_per_1m_tokens
+    return round(input_cost + output_cost, 8)
+
+
+def build_cost_report(records: Sequence[CostRecord]) -> dict[str, Any]:
+    """Build a structured cost report from tracked records."""
+    provider_costs: dict[str, float] = {}
+    provider_calls: dict[str, int] = {}
+
+    for record in records:
+        provider_costs[record.provider] = (
+            provider_costs.get(record.provider, 0.0) + record.cost_cny
+        )
+        provider_calls[record.provider] = (
+            provider_calls.get(record.provider, 0) + 1
+        )
+
+    return {
+        "call_count": len(records),
+        "estimated_call_count": sum(
+            1 for record in records if record.estimated
+        ),
+        "prompt_tokens": sum(record.prompt_tokens for record in records),
+        "completion_tokens": sum(
+            record.completion_tokens for record in records
+        ),
+        "total_tokens": sum(record.total_tokens for record in records),
+        "prompt_cache_hit_tokens": sum(
+            record.prompt_cache_hit_tokens for record in records
+        ),
+        "prompt_cache_miss_tokens": sum(
+            record.prompt_cache_miss_tokens for record in records
+        ),
+        "estimated_cost_cny": round(
+            sum(record.cost_cny for record in records),
+            8,
+        ),
+        "provider_calls": dict(sorted(provider_calls.items())),
+        "provider_costs_cny": {
+            provider: round(cost, 8)
+            for provider, cost in sorted(provider_costs.items())
+        },
+    }
 
 
 def create_provider(
@@ -479,17 +787,28 @@ def build_usage(
     """Build normalized usage from provider response or local estimates."""
     usage_payload = response_json.get("usage")
     if isinstance(usage_payload, dict):
-        prompt_tokens = int(usage_payload.get("prompt_tokens") or 0)
-        completion_tokens = int(usage_payload.get("completion_tokens") or 0)
-        total_tokens = int(
+        prompt_tokens = coerce_non_negative_int(
+            usage_payload.get("prompt_tokens")
+            or usage_payload.get("input_tokens")
+        )
+        completion_tokens = coerce_non_negative_int(
+            usage_payload.get("completion_tokens")
+            or usage_payload.get("output_tokens")
+        )
+        total_tokens = coerce_non_negative_int(
             usage_payload.get("total_tokens")
             or prompt_tokens + completion_tokens
+        )
+        prompt_cache_hit_tokens, prompt_cache_miss_tokens = (
+            extract_prompt_cache_tokens(usage_payload, prompt_tokens)
         )
         estimated = False
     else:
         prompt_tokens = estimate_tokens_for_messages(messages)
         completion_tokens = estimate_tokens(content)
         total_tokens = prompt_tokens + completion_tokens
+        prompt_cache_hit_tokens = 0
+        prompt_cache_miss_tokens = prompt_tokens
         estimated = True
 
     cost_usd = calculate_cost_usd(
@@ -505,7 +824,48 @@ def build_usage(
         total_tokens=total_tokens,
         estimated=estimated,
         cost_usd=cost_usd,
+        prompt_cache_hit_tokens=prompt_cache_hit_tokens,
+        prompt_cache_miss_tokens=prompt_cache_miss_tokens,
     )
+
+
+def extract_prompt_cache_tokens(
+    usage_payload: dict[str, Any],
+    prompt_tokens: int,
+) -> tuple[int, int]:
+    """Extract cached and uncached prompt token counts from usage metadata."""
+    cache_hit_tokens = coerce_non_negative_int(
+        usage_payload.get("prompt_cache_hit_tokens")
+    )
+    cache_miss_tokens = coerce_non_negative_int(
+        usage_payload.get("prompt_cache_miss_tokens")
+    )
+
+    for details_key in ("prompt_tokens_details", "input_tokens_details"):
+        if cache_hit_tokens > 0:
+            break
+        details = usage_payload.get(details_key)
+        if isinstance(details, dict):
+            cache_hit_tokens = coerce_non_negative_int(
+                details.get("cached_tokens")
+            )
+
+    if cache_hit_tokens > 0 and cache_miss_tokens == 0:
+        cache_miss_tokens = max(0, prompt_tokens - cache_hit_tokens)
+    elif cache_hit_tokens == 0 and cache_miss_tokens == 0:
+        cache_miss_tokens = prompt_tokens
+
+    return cache_hit_tokens, cache_miss_tokens
+
+
+def coerce_non_negative_int(value: Any) -> int:
+    """Convert a provider usage value to a non-negative integer."""
+    try:
+        coerced_value = int(value)
+    except (TypeError, ValueError):
+        return 0
+
+    return max(0, coerced_value)
 
 
 def estimate_tokens_for_messages(messages: Sequence[Message]) -> int:
@@ -587,6 +947,7 @@ def main() -> int:
         response.usage.estimated,
         response.usage.cost_usd,
     )
+    tracker.report(response.provider)
     return 0
 
 

@@ -1,0 +1,37 @@
+{
+  "id": "2026-05-24-github-search-anupalla15-supportflow-ai",
+  "title": "anupalla15/SupportFlow-AI",
+  "source": "github_search",
+  "source_url": "https://github.com/anupalla15/SupportFlow-AI",
+  "source_type": "repository",
+  "published_at": "2026-05-15T08:57:04Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "SupportFlow AI 是一个自主支持智能平台，通过对话式 AI、自适应工作流编排、情感感知升级、检索增强知识系统和预测性支持自动化来转变客户运营。",
+  "content": "SupportFlow AI 是一个开源的自主支持智能平台，旨在通过多种 AI 技术提升客户支持效率。其核心功能包括：\n- **对话式 AI**：利用自然语言处理与用户交互，处理常见问题。\n- **自适应工作流编排**：根据上下文动态调整支持流程。\n- **情感感知升级**：检测用户情绪，自动升级复杂或紧急问题。\n- **检索增强知识系统 (RAG)**：结合外部知识库，提供准确、上下文相关的回答。\n- **预测性支持自动化**：基于历史数据预测用户需求，主动提供帮助。\n该平台使用 JavaScript 开发，目前星标和分支数为 0，更新于 2026 年 5 月。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "RAG",
+    "Customer Support"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该平台直接涉及 AI 核心领域：对话式 AI、RAG、情感分析、预测性自动化，属于 AI 在客户支持中的典型应用，对 AI 知识库有参考价值。",
+  "key_points": [
+    "集成对话式 AI、RAG、情感分析和预测性自动化等多种 AI 技术",
+    "采用自适应工作流编排，动态调整支持流程",
+    "基于检索增强知识系统，提升回答准确性"
+  ],
+  "risks": [
+    "项目星标和分支数为 0，社区活跃度低，可能缺乏持续维护",
+    "描述中未提供具体实现细节或性能数据，实际效果待验证",
+    "依赖多种 AI 组件，集成复杂度高，可能存在兼容性问题"
+  ],
+  "score": 7,
+  "score_reason": "项目集成了多种前沿 AI 技术（如 RAG、情感分析、工作流编排），但星标和分支数为 0，表明社区活跃度和成熟度较低，存在不确定性。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

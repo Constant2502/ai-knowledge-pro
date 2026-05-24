@@ -1,0 +1,36 @@
+{
+  "id": "2026-05-24-github-search-0xdaniellopez-tweetfeed",
+  "title": "0xDanielLopez/TweetFeed",
+  "source": "github_search",
+  "source_url": "https://github.com/0xDanielLopez/TweetFeed",
+  "source_type": "repository",
+  "published_at": "2021-08-07T16:24:37Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "TweetFeed是一个收集推特信息安全社区分享的威胁指标（IOC）的开源项目，包括恶意URL、域名、IP和哈希值。",
+  "content": "TweetFeed项目通过自动化方式从推特上采集信息安全社区发布的威胁情报，主要功能包括：\n1. 收集恶意URL、域名、IP地址以及SHA256/MD5哈希值等IOC\n2. 支持蓝队、恶意软件检测、钓鱼攻击检测等安全场景\n3. 提供结构化的威胁情报数据，可用于安全分析和自动化响应\n4. 项目使用Python开发，通过推特API实时监控和提取威胁指标",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "虽然项目本身不直接涉及AI/LLM技术，但其自动化数据采集和威胁情报处理流程可作为AI安全应用的基础数据源，且其数据可用于训练安全相关的AI模型",
+  "key_points": [
+    "自动化收集推特上的威胁指标（IOC）",
+    "支持多种IOC类型：URL、域名、IP、哈希值",
+    "面向蓝队和恶意软件检测场景",
+    "提供结构化威胁情报数据"
+  ],
+  "risks": [
+    "推特API限制可能导致数据采集不完整",
+    "社区分享的IOC可能存在误报或过时信息",
+    "依赖第三方平台（推特）的可用性和政策变化"
+  ],
+  "score": 3,
+  "score_reason": "该项目主要聚焦于威胁情报收集，与AI/LLM/Agent核心领域关联度较低，仅间接涉及安全数据自动化处理",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

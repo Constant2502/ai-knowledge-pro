@@ -1,0 +1,34 @@
+{
+  "id": "2026-05-24-github-search-clolomagico123-ai-security-lab",
+  "title": "clolomagico123/ai-security-lab",
+  "source": "github_search",
+  "source_url": "https://github.com/clolomagico123/ai-security-lab",
+  "source_type": "repository",
+  "published_at": "2021-05-29T00:11:06Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "一个专注于AI系统安全测试的开源项目，提供针对大语言模型的对抗攻击、越狱测试和自动化漏洞扫描工具。",
+  "content": "该项目是一个AI安全实验室，主要面向红蓝队安全测试场景。核心功能包括：\n- 针对LLM的对抗攻击（如提示注入、越狱）\n- 自动化漏洞扫描器\n- 基于LangChain替代方案的Agent安全测试\n- 包含CTF挑战和事件响应（DFIR）实践\n- 支持蓝队防御和红队攻击的双重视角\n- 提供动手实验环境，适合网络安全教育\n\n技术栈涉及LLM攻击、Agent安全、对抗性机器学习等前沿领域。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接涉及LLM安全、Agent安全、对抗性攻击等AI核心安全议题，是AI知识库中不可或缺的安全实践资源。",
+  "key_points": [
+    "提供LLM越狱和提示注入等对抗攻击技术",
+    "包含自动化漏洞扫描器和Agent安全测试工具",
+    "支持红蓝队双视角，涵盖CTF和事件响应实践"
+  ],
+  "risks": [
+    "部分攻击技术可能被滥用，需注意伦理边界",
+    "项目更新频率未知，可能落后于最新安全威胁"
+  ],
+  "score": 8,
+  "score_reason": "项目直接聚焦AI安全，涵盖LLM攻击、Agent安全等核心主题，且包含实践工具和CTF场景，对AI安全研究和防御有较高参考价值。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

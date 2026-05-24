@@ -1,0 +1,38 @@
+{
+  "id": "2026-05-24-github-search-aldhio1993-ai-product-from-scratch",
+  "title": "aldhio1993/ai-product-from-scratch",
+  "source": "github_search",
+  "source_url": "https://github.com/aldhio1993/ai-product-from-scratch",
+  "source_type": "repository",
+  "published_at": "2025-04-14T19:09:49Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "这是一个从零开始构建AI情感分析代理的教育型开源项目，使用TypeScript和Node.js实现本地LLM推理。",
+  "content": "该项目旨在通过实践教学，帮助开发者理解AI产品开发的核心原理。它使用TypeScript作为主要编程语言，结合Express和React构建前后端，并利用node-llama-cpp库加载GGUF格式的本地大语言模型（LLM）。项目核心功能是构建一个AI代理，能够分析消息中的情感影响。通过这个项目，学习者可以掌握提示工程（prompt engineering）、本地LLM部署、以及如何将AI能力集成到实际产品中。项目代码结构清晰，适合作为学习资源。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "情感分析",
+    "教育"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接涉及AI产品开发的全流程，包括本地LLM推理、Agent构建、提示工程等，是AI知识库中关于实践教学和产品化的重要参考。",
+  "key_points": [
+    "从零构建AI情感分析代理，覆盖AI产品开发全流程。",
+    "使用TypeScript、Express、React和node-llama-cpp等现代技术栈。",
+    "强调本地LLM推理和提示工程实践。",
+    "作为教育型项目，代码结构清晰，适合学习。"
+  ],
+  "risks": [
+    "项目可能依赖特定版本的node-llama-cpp库，存在兼容性问题。",
+    "本地LLM推理对硬件有一定要求，可能影响用户体验。",
+    "情感分析模型的准确性和泛化能力可能有限。"
+  ],
+  "score": 8,
+  "score_reason": "项目聚焦于AI产品开发的核心实践，涵盖LLM、Agent、提示工程等关键概念，且代码完整、技术栈现代，具有很高的教育价值。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

@@ -1,0 +1,457 @@
+{
+  "run_id": "20260524-213044",
+  "source": "pipeline",
+  "collected_at": "2026-05-24T21:30:46+08:00",
+  "items": [
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "kyle122497/llamator-mcp-server",
+      "source_url": "https://github.com/kyle122497/llamator-mcp-server",
+      "published_at": "2026-01-29T15:20:34Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "🚀 Automate LLM red teaming workflows with the MCP server for LLAMATOR, featuring asynchronous job handling and seamless integration.",
+      "metadata": {
+        "language": "Python",
+        "stars": 1,
+        "forks": 1,
+        "updated_at": "2026-05-24T13:30:32Z",
+        "topics": [
+          "agent",
+          "ai-security",
+          "attack",
+          "detection",
+          "hallucination",
+          "http-server",
+          "llm",
+          "llm-security",
+          "llm-testing",
+          "mcp-server",
+          "misinformation",
+          "nlp",
+          "owasp",
+          "python",
+          "rag-evaluation",
+          "red-team",
+          "vulnerability"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "candca/docchat-rag-",
+      "source_url": "https://github.com/candca/docchat-rag-",
+      "published_at": "2026-05-21T09:35:03Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "",
+      "metadata": {
+        "language": "Python",
+        "stars": 1,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:31Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "hringtonshiyi/video-llm-evaluation-harness",
+      "source_url": "https://github.com/hringtonshiyi/video-llm-evaluation-harness",
+      "published_at": "2026-05-24T13:30:18Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "A comprehensive framework for evaluating video-based large language models",
+      "metadata": {
+        "language": null,
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:22Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "anupalla15/SupportFlow-AI",
+      "source_url": "https://github.com/anupalla15/SupportFlow-AI",
+      "published_at": "2026-05-15T08:57:04Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "SupportFlow AI is an autonomous support intelligence platform engineered to transform customer operations through conversational AI, adaptive workflow orchestration, sentiment-aware escalation, retrieval-augmented knowledge systems, and predictive support automation.",
+      "metadata": {
+        "language": "JavaScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:18Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Georgeyoussef066/promptshield",
+      "source_url": "https://github.com/Georgeyoussef066/promptshield",
+      "published_at": "2026-01-31T12:32:27Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "🛡️ Secure your LLM applications with PromptShields, a framework designed for real-time protection against prompt injection and data leaks.",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:15Z",
+        "topics": [
+          "ai",
+          "ai-defense",
+          "ai-hacking",
+          "ai-safety",
+          "appsecurity",
+          "cli",
+          "compliance",
+          "content-safety",
+          "csharp",
+          "developer-tools",
+          "hacking-tools-ai",
+          "llm",
+          "llm-protection",
+          "prompt-engineering",
+          "prompt-injection",
+          "prompt-security",
+          "python"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "NajiNut/aether",
+      "source_url": "https://github.com/NajiNut/aether",
+      "published_at": "2021-12-12T15:35:26Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "🛡️ Enforce AI governance with Aether, a low-latency gateway for security, compliance, and auditability in enterprise applications.",
+      "metadata": {
+        "language": null,
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:29:50Z",
+        "topics": [
+          "aether",
+          "big",
+          "chatbot",
+          "discussion-platform",
+          "go",
+          "hugo",
+          "lightdm-theme",
+          "llm",
+          "lockscreen",
+          "mod",
+          "official",
+          "openai",
+          "package",
+          "vue",
+          "windows-app"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "clawhubmx/claw-bun-mcp",
+      "source_url": "https://github.com/clawhubmx/claw-bun-mcp",
+      "published_at": "2026-05-22T03:34:54Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "browser based mcp skills",
+      "metadata": {
+        "language": "JavaScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:29:46Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Choi-Eunseok/T-LLM",
+      "source_url": "https://github.com/Choi-Eunseok/T-LLM",
+      "published_at": "2026-04-30T04:19:08Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:29:20Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Ayush-D2004/Crypto-Sage",
+      "source_url": "https://github.com/Ayush-D2004/Crypto-Sage",
+      "published_at": "2026-05-24T13:08:50Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "A Multi-agent AI tool for researching latest news about Web3 and Crypto.",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:28:56Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "clolomagico123/ai-security-lab",
+      "source_url": "https://github.com/clolomagico123/ai-security-lab",
+      "published_at": "2021-05-29T00:11:06Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "🤖 Test and secure AI systems with advanced techniques for Large Language Models, including jailbreaks and automated vulnerability scanners.",
+      "metadata": {
+        "language": null,
+        "stars": 4,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:28:53Z",
+        "topics": [
+          "adversarial-attacks",
+          "adversarial-ml",
+          "agentic-ai-security",
+          "ai-red-team",
+          "ai-security",
+          "blue-team",
+          "ctf",
+          "cybersecurity-education",
+          "dfir",
+          "hands-on-labs",
+          "incident-response",
+          "langchain-alternative",
+          "llm",
+          "llm-attacks",
+          "offensive-security",
+          "prompt-injection"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "akbar-ops/sistema-de-analisis-de-documentos-juridicos",
+      "source_url": "https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos",
+      "published_at": "2024-12-03T07:14:33Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "📄 Analyze, classify, and search legal documents with advanced NLP techniques to aid legal professionals in finding precedents and jurisprudence effectively.",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 1,
+        "updated_at": "2026-05-24T13:28:49Z",
+        "topics": [
+          "bertopic",
+          "django",
+          "document-analysis",
+          "embeddings",
+          "hdbscan",
+          "information-retrieval",
+          "llm",
+          "machine-learning",
+          "nlp",
+          "ollama",
+          "pgvector",
+          "rag",
+          "rag-chatbot",
+          "semantic-search",
+          "vue"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "aldhio1993/ai-product-from-scratch",
+      "source_url": "https://github.com/aldhio1993/ai-product-from-scratch",
+      "published_at": "2025-04-14T19:09:49Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "🤖 Build an AI agent from scratch to analyze emotional impact in messages, enhancing your understanding of AI product development principles.",
+      "metadata": {
+        "language": "TypeScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:28:24Z",
+        "topics": [
+          "ai-product",
+          "educational",
+          "express",
+          "gguf",
+          "learning-resource",
+          "llm",
+          "local-llm",
+          "node-llama-cpp",
+          "nodejs",
+          "prompt-engineering",
+          "react",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "SuperJayLiu/AI-for-Economics-and-Finance-Research",
+      "source_url": "https://github.com/SuperJayLiu/AI-for-Economics-and-Finance-Research",
+      "published_at": "2026-05-24T12:13:03Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "An \"all-you-need-to-know\" practical guide to using AI and LLMs responsibly and effectively for economics and finance research: from core skills and ChatGPT/Claude Projects to coding, writing, reproducibility, and automation. By Chaojie (Jay) Liu 刘超杰, PhD Candidate in Finance, University of Bristol Business School; 小红书账号：SuperJay",
+      "metadata": {
+        "language": null,
+        "stars": 1,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:44Z",
+        "topics": [
+          "academic-presentation",
+          "academic-project",
+          "academic-research",
+          "academic-writing",
+          "ai",
+          "ai-agents",
+          "ai-tools",
+          "economics",
+          "finance",
+          "research-tool"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "owgreen-dev/tsfix",
+      "source_url": "https://github.com/owgreen-dev/tsfix",
+      "published_at": "2026-05-06T01:11:41Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "Library-aware TypeScript error recovery for LLM-generated code. Deterministic VS Code Quick Fix + single-file LLM mend. 98.6% on a real-world bench at <$0.005 per fix.",
+      "metadata": {
+        "language": "TypeScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:44Z",
+        "topics": [
+          "agentic",
+          "ai",
+          "auto-fix",
+          "claude",
+          "code-repair",
+          "codemod",
+          "llm",
+          "openai",
+          "tsc",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "notforyou23/home23",
+      "source_url": "https://github.com/notforyou23/home23",
+      "published_at": "2026-04-09T19:51:22Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "An installable AI operating system — persistent agents with living brains",
+      "metadata": {
+        "language": "JavaScript",
+        "stars": 11,
+        "forks": 1,
+        "updated_at": "2026-05-24T13:30:43Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "Kitan-Dara06/Legal-Ai-Copilot",
+      "source_url": "https://github.com/Kitan-Dara06/Legal-Ai-Copilot",
+      "published_at": "2026-02-24T20:05:37Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:42Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "weilaiqishi/stockWebChat",
+      "source_url": "https://github.com/weilaiqishi/stockWebChat",
+      "published_at": "2026-05-24T12:24:42Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "",
+      "metadata": {
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:39Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "mr-sharath/vidhaan_ai",
+      "source_url": "https://github.com/mr-sharath/vidhaan_ai",
+      "published_at": "2026-05-24T12:16:25Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "Sovereign Legal Intelligence Platform of India",
+      "metadata": {
+        "language": "TypeScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:39Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "yashpardeshi5514/AI-workspace",
+      "source_url": "https://github.com/yashpardeshi5514/AI-workspace",
+      "published_at": "2026-05-23T15:29:02Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "",
+      "metadata": {
+        "language": "TypeScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-05-24T13:30:37Z",
+        "topics": []
+      }
+    },
+    {
+      "source": "github_search",
+      "source_type": "repository",
+      "title": "0xDanielLopez/TweetFeed",
+      "source_url": "https://github.com/0xDanielLopez/TweetFeed",
+      "published_at": "2021-08-07T16:24:37Z",
+      "collected_at": "2026-05-24T21:30:44+08:00",
+      "description": "TweetFeed collects Indicators of Compromise (IOCs) shared by the infosec community at Twitter. Here you will find malicious URLs, domains, IPs, and SHA256/MD5 hashes.",
+      "metadata": {
+        "language": null,
+        "stars": 659,
+        "forks": 68,
+        "updated_at": "2026-05-24T13:30:36Z",
+        "topics": [
+          "blueteam",
+          "malware",
+          "malware-detection",
+          "malware-research",
+          "osint",
+          "phishing",
+          "phishing-attacks",
+          "phishing-detection",
+          "phishing-sites"
+        ]
+      }
+    }
+  ]
+}

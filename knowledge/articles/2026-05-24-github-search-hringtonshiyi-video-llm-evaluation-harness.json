@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-24-github-search-hringtonshiyi-video-llm-evaluation-harness",
+  "title": "hringtonshiyi/video-llm-evaluation-harness",
+  "source": "github_search",
+  "source_url": "https://github.com/hringtonshiyi/video-llm-evaluation-harness",
+  "source_type": "repository",
+  "published_at": "2026-05-24T13:30:18Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "视频大语言模型评估框架，用于系统评测视频LLM性能",
+  "content": "该仓库提供了一个全面的视频大语言模型评估框架，支持对视频理解、生成等任务进行标准化评测。框架可能包含数据集加载、模型接口、评估指标等模块，旨在简化视频LLM的对比与验证流程。当前星标数为0，更新于2026年5月，处于早期开发阶段。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "直接涉及视频LLM评估这一AI前沿领域，对构建可靠的多模态AI系统有参考意义",
+  "key_points": [
+    "专注于视频LLM的标准化评估",
+    "框架设计可能包含数据集、模型接口和指标",
+    "项目处于早期阶段，无星标和分支"
+  ],
+  "risks": [
+    "项目可能因缺乏维护而停滞",
+    "评估框架的通用性和准确性未经验证",
+    "视频LLM领域快速变化，框架可能很快过时"
+  ],
+  "score": 4,
+  "score_reason": "项目概念明确但尚未成熟，无社区关注和实际使用案例，评估框架的价值需后续验证",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

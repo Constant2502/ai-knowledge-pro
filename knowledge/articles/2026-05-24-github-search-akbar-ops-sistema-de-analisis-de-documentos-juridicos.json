@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-24-github-search-akbar-ops-sistema-de-analisis-de-documentos-juridicos",
+  "title": "akbar-ops/sistema-de-analisis-de-documentos-juridicos",
+  "source": "github_search",
+  "source_url": "https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos",
+  "source_type": "repository",
+  "published_at": "2024-12-03T07:14:33Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "一个基于高级NLP技术的法律文档分析系统，支持文档分类、语义搜索和判例检索。",
+  "content": "该项目是一个法律文档分析系统，使用Python开发，结合Django后端和Vue前端。核心功能包括：利用BERTopic和HDBSCAN进行主题建模和文档聚类，通过Ollama和LLM实现语义理解和问答，使用pgvector进行向量存储和相似性搜索，支持RAG（检索增强生成）聊天机器人。系统旨在帮助法律专业人士高效查找先例和判例法。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目直接涉及LLM、RAG、嵌入向量和语义搜索等AI核心技术，属于AI在垂直领域（法律）的典型应用，符合AI知识库收录标准。",
+  "key_points": [
+    "使用BERTopic和HDBSCAN进行无监督主题建模和文档聚类",
+    "集成Ollama和LLM实现自然语言问答和文档理解",
+    "基于pgvector的向量数据库支持语义搜索和RAG聊天机器人"
+  ],
+  "risks": [
+    "项目星标数为0，社区活跃度和代码质量缺乏验证",
+    "依赖多个外部服务（Ollama、pgvector），部署复杂度较高",
+    "法律领域对准确性和可解释性要求极高，LLM幻觉可能带来风险"
+  ],
+  "score": 8,
+  "score_reason": "项目集成了RAG、LLM、语义搜索等前沿AI技术，且应用场景明确（法律文档分析），技术栈完整，但星标数较少，成熟度待验证。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-24-github-search-superjayliu-ai-for-economics-and-finance-research",
+  "title": "SuperJayLiu/AI-for-Economics-and-Finance-Research",
+  "source": "github_search",
+  "source_url": "https://github.com/SuperJayLiu/AI-for-Economics-and-Finance-Research",
+  "source_type": "repository",
+  "published_at": "2026-05-24T12:13:03Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "这是一个面向经济学和金融研究者的实用指南，涵盖AI和LLM在学术写作、编码、可重复性和自动化中的负责任使用。",
+  "content": "该仓库由布里斯托大学金融学博士生刘超杰维护，旨在为经济学和金融领域的研究人员提供使用AI和LLM的全面指导。内容包括核心技能、ChatGPT/Claude Projects的应用、编码辅助、学术写作、研究可重复性以及工作流自动化。仓库标签包括学术展示、学术项目、学术写作、AI、AI代理、经济学、金融和研究工具，适合希望将AI融入研究流程的学者。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "直接涉及AI和LLM在经济学与金融研究中的负责任使用，包含Agent和自动化实践，符合知识库对AI应用场景的需求。",
+  "key_points": [
+    "提供AI和LLM在学术研究中的实用指南，涵盖编码、写作和自动化。",
+    "由金融学博士生维护，内容针对经济学和金融领域。",
+    "包含ChatGPT/Claude Projects等具体工具的使用方法。"
+  ],
+  "risks": [
+    "项目星数少，可能缺乏社区验证和持续更新。",
+    "指南可能过于依赖特定工具（如ChatGPT），存在工具依赖风险。",
+    "学术研究中AI使用的伦理和可重复性仍需谨慎评估。"
+  ],
+  "score": 8,
+  "score_reason": "内容高度聚焦于AI在学术研究中的实际应用，覆盖LLM和Agent，但项目星数较少，影响力有限。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

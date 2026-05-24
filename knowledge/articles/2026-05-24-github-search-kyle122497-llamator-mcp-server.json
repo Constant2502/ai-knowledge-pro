@@ -1,0 +1,38 @@
+{
+  "id": "2026-05-24-github-search-kyle122497-llamator-mcp-server",
+  "title": "kyle122497/llamator-mcp-server",
+  "source": "github_search",
+  "source_url": "https://github.com/kyle122497/llamator-mcp-server",
+  "source_type": "repository",
+  "published_at": "2026-01-29T15:20:34Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "kyle122497/llamator-mcp-server 是一个用于自动化大语言模型红队测试的 MCP 服务器，支持异步任务处理和与 LLAMATOR 的无缝集成。",
+  "content": "该仓库提供了一个基于 MCP（Model Context Protocol）的服务器，用于自动化 LLM 红队测试工作流。它使用 Python 编写，支持异步任务处理，能够集成 LLAMATOR 工具进行攻击、检测、幻觉评估、RAG 评估等安全测试。项目涵盖了 AI 安全、漏洞检测、错误信息识别等主题，适用于 LLM 安全评估和红队操作。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "AI安全",
+    "红队测试",
+    "MCP"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该仓库专注于 LLM 安全评估和红队测试，是 AI 安全领域的重要工具，直接服务于大语言模型的应用安全与鲁棒性验证。",
+  "key_points": [
+    "自动化 LLM 红队测试工作流，支持异步任务处理",
+    "集成 LLAMATOR 工具，覆盖攻击、检测、幻觉评估、RAG 评估等",
+    "基于 MCP 协议，便于与其他 AI 工具集成"
+  ],
+  "risks": [
+    "项目星标和分支数较少，社区活跃度低，可能存在维护风险",
+    "依赖外部 LLAMATOR 工具，集成稳定性需验证",
+    "红队测试可能涉及敏感操作，需注意合规与伦理问题"
+  ],
+  "score": 8,
+  "score_reason": "项目直接针对 LLM 安全测试和红队自动化，技术实现清晰，与 AI 安全领域高度相关，但星标数较少，成熟度有限。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

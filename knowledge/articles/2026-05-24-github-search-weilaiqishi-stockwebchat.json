@@ -1,0 +1,38 @@
+{
+  "id": "2026-05-24-github-search-weilaiqishi-stockwebchat",
+  "title": "weilaiqishi/stockWebChat",
+  "source": "github_search",
+  "source_url": "https://github.com/weilaiqishi/stockWebChat",
+  "source_type": "repository",
+  "published_at": "2026-05-24T12:24:42Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "一个基于Python的股票Web聊天项目，提供股票相关信息的交互式查询功能。",
+  "content": "该项目是一个股票领域的Web聊天应用，使用Python开发。它可能集成了自然语言处理或检索增强生成（RAG）技术，以支持用户通过对话界面查询股票数据、市场信息或进行投资分析。项目目前处于早期阶段，Star和Fork数量均为0，且未明确标注技术栈或主题标签。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent",
+    "RAG",
+    "股票",
+    "聊天机器人"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "该项目属于AI驱动的对话系统在金融领域的应用，涉及自然语言理解和信息检索，符合AI知识库的范畴。",
+  "key_points": [
+    "基于Python的股票Web聊天应用",
+    "可能集成NLP或RAG技术用于股票信息查询",
+    "项目处于早期阶段，社区活跃度低"
+  ],
+  "risks": [
+    "缺乏详细文档和代码示例，难以评估技术实现",
+    "项目可能已停止维护或未完成开发",
+    "股票数据来源和准确性未说明，存在信息风险"
+  ],
+  "score": 4,
+  "score_reason": "项目与AI聊天和股票领域相关，但缺乏详细描述、技术文档和实际应用案例，成熟度低。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}

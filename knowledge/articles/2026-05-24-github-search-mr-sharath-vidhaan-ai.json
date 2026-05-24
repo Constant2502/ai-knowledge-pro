@@ -1,0 +1,35 @@
+{
+  "id": "2026-05-24-github-search-mr-sharath-vidhaan-ai",
+  "title": "mr-sharath/vidhaan_ai",
+  "source": "github_search",
+  "source_url": "https://github.com/mr-sharath/vidhaan_ai",
+  "source_type": "repository",
+  "published_at": "2026-05-24T12:16:25Z",
+  "collected_at": "2026-05-24T21:30:44+08:00",
+  "summary": "Vidhaan AI 是一个面向印度的主权法律智能平台，基于 TypeScript 开发，目前处于早期阶段。",
+  "content": "该仓库名为 mr-sharath/vidhaan_ai，描述为“印度主权法律智能平台”，使用 TypeScript 语言。截至分析时，星标和分支数均为 0，无主题标签，最后更新于 2026 年 5 月 24 日。项目可能旨在利用 AI 技术处理法律文本、提供法律咨询或辅助司法决策，但缺乏具体实现细节和社区关注。",
+  "tags": [
+    "AI",
+    "LLM",
+    "Agent"
+  ],
+  "status": "draft",
+  "ai_relevance": true,
+  "ai_relevance_reason": "涉及法律领域的 AI 应用，属于 AI 知识库中垂直行业智能化的潜在案例，但当前信息不足以评估技术价值。",
+  "key_points": [
+    "定位为印度主权法律智能平台，具有明确的领域应用场景。",
+    "使用 TypeScript 开发，但无具体技术栈或架构说明。",
+    "项目处于极早期，无星标、分支或社区参与。"
+  ],
+  "risks": [
+    "项目可能仅为占位或实验性仓库，缺乏实际进展。",
+    "法律 AI 涉及数据隐私和合规性，未提及相关措施。",
+    "无任何许可证或贡献指南，可维护性不明。"
+  ],
+  "score": 3,
+  "score_reason": "项目概念与法律 AI 相关，但无实际代码、文档或社区支持，成熟度极低，实用性存疑。",
+  "distribution_channels": [
+    "telegram",
+    "feishu"
+  ]
+}
