@@ -1,0 +1,1 @@
+"""Reusable design pattern examples."""

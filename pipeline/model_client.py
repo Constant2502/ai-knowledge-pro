@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import json
 import logging
 import math
 import os
+import re
 import sys
 import time
 from abc import ABC, abstractmethod
@@ -714,6 +716,91 @@ def quick_chat(
         temperature=temperature,
         max_tokens=max_tokens,
     )
+
+
+def chat(
+    prompt: str,
+    system_prompt: str | None = None,
+    temperature: float = 0.2,
+    max_tokens: int | None = None,
+) -> tuple[str, Usage]:
+    """Send a prompt and return text plus usage.
+
+    Args:
+        prompt: User prompt.
+        system_prompt: Optional system prompt.
+        temperature: Sampling temperature.
+        max_tokens: Optional maximum completion tokens.
+
+    Returns:
+        A tuple of response text and normalized usage.
+    """
+    response = quick_chat(
+        prompt=prompt,
+        system_prompt=system_prompt,
+        temperature=temperature,
+        max_tokens=max_tokens,
+    )
+    return response.content, response.usage
+
+
+def chat_json(
+    prompt: str,
+    system_prompt: str | None = None,
+    temperature: float = 0.0,
+    max_tokens: int | None = None,
+) -> tuple[dict[str, Any], Usage]:
+    """Send a prompt and parse the response as a JSON object.
+
+    Args:
+        prompt: User prompt.
+        system_prompt: Optional system prompt.
+        temperature: Sampling temperature.
+        max_tokens: Optional maximum completion tokens.
+
+    Returns:
+        A tuple of parsed JSON object and normalized usage.
+
+    Raises:
+        LLMClientError: If the model does not return a JSON object.
+    """
+    text, usage = chat(
+        prompt=prompt,
+        system_prompt=system_prompt,
+        temperature=temperature,
+        max_tokens=max_tokens,
+    )
+    try:
+        payload = json.loads(extract_json_object(text))
+    except json.JSONDecodeError as exc:
+        raise LLMClientError("LLM response is not valid JSON.") from exc
+
+    if not isinstance(payload, dict):
+        raise LLMClientError("LLM JSON response must be an object.")
+
+    return payload, usage
+
+
+def extract_json_object(value: str) -> str:
+    """Extract a JSON object from plain text or a Markdown code fence."""
+    stripped_value = value.strip()
+    if stripped_value.startswith("{") and stripped_value.endswith("}"):
+        return stripped_value
+
+    fenced_match = re.search(
+        r"```(?:json)?\s*(?P<json>\{.*?\})\s*```",
+        stripped_value,
+        re.IGNORECASE | re.DOTALL,
+    )
+    if fenced_match:
+        return fenced_match.group("json")
+
+    start = stripped_value.find("{")
+    end = stripped_value.rfind("}")
+    if start >= 0 and end > start:
+        return stripped_value[start : end + 1]
+
+    return stripped_value
 
 
 def should_retry(error: Exception) -> bool:

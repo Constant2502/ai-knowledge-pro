@@ -35,11 +35,19 @@ LOG_DIR = PROJECT_ROOT / "knowledge" / "logs"
 VALIDATOR_PATH = PROJECT_ROOT / "hooks" / "validate_json.py"
 
 SUPPORTED_SOURCES = {"github", "rss"}
+VALID_STEPS = {1, 2, 3, 4}
+DEFAULT_STEPS = (1, 2, 3, 4)
 DEFAULT_LIMIT = 20
 REQUEST_TIMEOUT_SECONDS = 30.0
 PIPELINE_SOURCE = "pipeline"
 STATUS_DRAFT = "draft"
 DEFAULT_DISTRIBUTION_CHANNELS = ["telegram", "feishu"]
+STEP_NAMES = {
+    1: "collect",
+    2: "save_raw",
+    3: "analyze_organize",
+    4: "save_articles",
+}
 
 AI_KEYWORDS = (
     "ai",
@@ -133,8 +141,10 @@ class PipelineResult:
     finished_at: str
     sources: list[str]
     limit: int
+    steps: list[int]
     dry_run: bool
     raw_file: Path | None
+    raw_input_file: Path | None
     article_files: list[Path]
     collected_count: int
     analyzed_count: int
@@ -158,6 +168,17 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         type=int,
         default=DEFAULT_LIMIT,
         help="Maximum number of collected items to process.",
+    )
+    parser.add_argument(
+        "--step",
+        action="append",
+        dest="steps",
+        help=(
+            "Pipeline step to run. Can be repeated, for example "
+            "--step 1 --step 2. Defaults to 1,2,3,4. "
+            "Steps: 1=collect, 2=save raw, "
+            "3=analyze and organize, 4=save articles."
+        ),
     )
     parser.add_argument(
         "--dry-run",
@@ -207,51 +228,132 @@ def parse_sources(raw_sources: str) -> list[str]:
     return list(dict.fromkeys(sources))
 
 
+def parse_steps(raw_steps: Sequence[str] | None) -> list[int]:
+    """Parse and validate selected pipeline steps."""
+    if not raw_steps:
+        return list(DEFAULT_STEPS)
+
+    steps: list[int] = []
+    for raw_step in raw_steps:
+        for step_part in raw_step.split(","):
+            step_text = step_part.strip()
+            if not step_text:
+                continue
+            try:
+                step = int(step_text)
+            except ValueError as exc:
+                raise ValueError(
+                    f"Unsupported step '{step_text}'. "
+                    "Supported steps: 1, 2, 3, 4."
+                ) from exc
+            if step not in VALID_STEPS:
+                raise ValueError(
+                    f"Unsupported step '{step}'. "
+                    "Supported steps: 1, 2, 3, 4."
+                )
+            if step not in steps:
+                steps.append(step)
+
+    if not steps:
+        raise ValueError("--step must include at least one step.")
+
+    normalized_steps = sorted(steps)
+    validate_step_dependencies(normalized_steps)
+    return normalized_steps
+
+
+def validate_step_dependencies(steps: Sequence[int]) -> None:
+    """Validate step combinations that require in-memory state."""
+    if not steps:
+        raise ValueError("--step must include at least one step.")
+    invalid_steps = sorted(set(steps) - VALID_STEPS)
+    if invalid_steps:
+        invalid = ", ".join(map(str, invalid_steps))
+        raise ValueError(
+            f"Unsupported steps: {invalid}. Supported steps: 1, 2, 3, 4."
+        )
+    if 2 in steps and 1 not in steps:
+        raise ValueError("--step 2 requires --step 1 in the same run.")
+    if 4 in steps and 3 not in steps:
+        raise ValueError("--step 4 requires --step 3 in the same run.")
+
+
 def run_pipeline(
     sources: Sequence[str],
     limit: int,
     rss_feeds: Sequence[str],
+    steps: Sequence[int] | None = None,
     dry_run: bool = False,
     run_id: str | None = None,
     started_at: str | None = None,
 ) -> PipelineResult:
-    """Run collect, analyze, organize, and save steps."""
+    """Run selected pipeline steps."""
     if limit < 1:
         raise ValueError("--limit must be at least 1.")
 
+    selected_steps = sorted(set(steps or DEFAULT_STEPS))
+    validate_step_dependencies(selected_steps)
     run_id = run_id or build_run_id()
     started_at = started_at or now_iso()
     collected_at = started_at
     cost_tracker.reset()
-    LOGGER.info("Starting pipeline run_id=%s sources=%s", run_id, ",".join(sources))
-
-    collected_items = collect_items(
-        sources=sources,
-        limit=limit,
-        rss_feeds=rss_feeds,
-        collected_at=collected_at,
-    )
-    LOGGER.info("Collected %s candidate items", len(collected_items))
-
-    raw_file = save_raw_items(
-        run_id=run_id,
-        items=collected_items,
-        dry_run=dry_run,
-    )
-
-    provider = create_provider()
-    analyzed_items = analyze_items(collected_items, provider=provider)
-    LOGGER.info("Analyzed %s items", len(analyzed_items))
-
-    article_records, skipped_duplicate_count = organize_items(analyzed_items)
     LOGGER.info(
-        "Organized %s article records; skipped duplicates=%s",
-        len(article_records),
-        skipped_duplicate_count,
+        "Starting pipeline run_id=%s sources=%s steps=%s",
+        run_id,
+        ",".join(sources),
+        ",".join(map(str, selected_steps)),
     )
 
-    article_files = save_articles(article_records, dry_run=dry_run)
-    LOGGER.info("Saved %s article files", len(article_files))
+    collected_items: list[CollectedItem] = []
+    raw_file: Path | None = None
+    raw_input_file: Path | None = None
+    analyzed_items: list[AnalyzedItem] = []
+    article_records: list[dict[str, Any]] = []
+    skipped_duplicate_count = 0
+    article_files: list[Path] = []
+
+    if 1 in selected_steps:
+        collected_items = collect_items(
+            sources=sources,
+            limit=limit,
+            rss_feeds=rss_feeds,
+            collected_at=collected_at,
+        )
+        LOGGER.info("Collected %s candidate items", len(collected_items))
+
+    if 2 in selected_steps:
+        raw_file = save_raw_items(
+            run_id=run_id,
+            items=collected_items,
+            dry_run=dry_run,
+        )
+
+    if 3 in selected_steps:
+        if not collected_items:
+            raw_input_file, collected_items = load_latest_raw_items(limit=limit)
+            LOGGER.info(
+                "Loaded %s candidate items from raw file: %s",
+                len(collected_items),
+                raw_input_file,
+            )
+        elif raw_file is not None:
+            raw_input_file = raw_file
+
+        provider = create_provider()
+        analyzed_items = analyze_items(collected_items, provider=provider)
+        LOGGER.info("Analyzed %s items", len(analyzed_items))
+
+        article_records, skipped_duplicate_count = organize_items(analyzed_items)
+        LOGGER.info(
+            "Organized %s article records; skipped duplicates=%s",
+            len(article_records),
+            skipped_duplicate_count,
+        )
+
+    if 4 in selected_steps:
+        article_files = save_articles(article_records, dry_run=dry_run)
+        LOGGER.info("Saved %s article files", len(article_files))
+
     cost_report = cost_tracker.report()
 
     return PipelineResult(
@@ -260,8 +362,10 @@ def run_pipeline(
         finished_at=now_iso(),
         sources=list(sources),
         limit=limit,
+        steps=selected_steps,
         dry_run=dry_run,
         raw_file=raw_file,
+        raw_input_file=raw_input_file,
         article_files=article_files,
         collected_count=len(collected_items),
         analyzed_count=len(analyzed_items),
@@ -531,6 +635,73 @@ def save_raw_items(
         encoding="utf-8",
     )
     return raw_file
+
+
+def load_latest_raw_items(limit: int) -> tuple[Path, list[CollectedItem]]:
+    """Load collected items from the latest pipeline raw JSON file."""
+    raw_file = find_latest_pipeline_raw_file()
+    payload = json.loads(raw_file.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError(f"Raw file must contain a JSON object: {raw_file}")
+
+    raw_items = payload.get("items")
+    if not isinstance(raw_items, list):
+        raise ValueError(f"Raw file missing items list: {raw_file}")
+
+    collected_items: list[CollectedItem] = []
+    for raw_item in raw_items:
+        item = parse_collected_item_payload(raw_item)
+        if item is None:
+            LOGGER.warning("Skipping invalid raw item in %s", raw_file)
+            continue
+        collected_items.append(item)
+        if len(collected_items) >= limit:
+            break
+
+    if not collected_items:
+        raise ValueError(f"Raw file contains no valid items: {raw_file}")
+
+    return raw_file, collected_items
+
+
+def find_latest_pipeline_raw_file() -> Path:
+    """Return the latest raw JSON file produced by this pipeline."""
+    raw_files = sorted(RAW_DIR.glob("pipeline-*.json"))
+    if not raw_files:
+        raise ValueError(
+            "No pipeline raw files found. Run --step 1 --step 2 first."
+        )
+    return raw_files[-1]
+
+
+def parse_collected_item_payload(payload: Any) -> CollectedItem | None:
+    """Parse one raw JSON item into a CollectedItem."""
+    if not isinstance(payload, dict):
+        return None
+
+    try:
+        metadata = payload.get("metadata")
+        return CollectedItem(
+            source=get_required_raw_string(payload, "source"),
+            source_type=get_required_raw_string(payload, "source_type"),
+            title=get_required_raw_string(payload, "title"),
+            source_url=get_required_raw_string(payload, "source_url"),
+            published_at=get_string(payload, "published_at"),
+            collected_at=get_required_raw_string(payload, "collected_at"),
+            description=get_string(payload, "description"),
+            metadata=metadata if isinstance(metadata, dict) else {},
+        )
+    except ValueError as exc:
+        LOGGER.warning("Invalid raw item: %s", exc)
+        return None
+
+
+def get_required_raw_string(payload: dict[str, Any], key: str) -> str:
+    """Return a required non-empty string from a raw item payload."""
+    value = get_string(payload, key)
+    if not value:
+        raise ValueError(f"Raw item missing required string field: {key}")
+    return value
 
 
 def analyze_items(
@@ -914,7 +1085,9 @@ def count_non_whitespace_chars(value: str) -> int:
 def log_result(result: PipelineResult, dry_run: bool) -> None:
     """Log the final pipeline result."""
     LOGGER.info(
-        "Pipeline complete: collected=%s analyzed=%s saved=%s duplicates=%s",
+        "Pipeline complete: steps=%s collected=%s analyzed=%s saved=%s "
+        "duplicates=%s",
+        ",".join(map(str, result.steps)),
         result.collected_count,
         result.analyzed_count,
         result.saved_count,
@@ -949,6 +1122,7 @@ def write_failure_run_log(
     started_at: str,
     sources: Sequence[str],
     limit: int,
+    steps: Sequence[int],
     dry_run: bool,
     error: Exception,
 ) -> Path:
@@ -958,27 +1132,31 @@ def write_failure_run_log(
     raw_file = RAW_DIR / f"pipeline-{run_id}.json"
     raw_output = format_optional_path(raw_file if raw_file.exists() else None)
     sources_text = ", ".join(sources) if sources else "未解析"
+    step_sequence = format_step_sequence(steps)
     finished_at = now_iso()
     content = (
         "# Agent 执行日志\n\n"
         "## 基本信息\n\n"
         f"- 运行 ID：`{run_id}`\n"
         "- 调用方：pipeline CLI\n"
-        "- 执行顺序：`collect -> analyze -> organize -> save`\n"
+        f"- 执行顺序：`{step_sequence}`\n"
         f"- 数据来源：`{sources_text}`\n"
         f"- 执行日期：`{started_at[:10]}`\n"
         f"- 开始时间：`{started_at}`\n"
         f"- 结束时间：`{finished_at}`\n"
         f"- 执行方式：`python pipeline/pipeline.py --sources "
-        f"{sources_text} --limit {limit}`\n"
+        f"{sources_text} --limit {limit} {format_step_cli_args(steps)}`\n"
         f"- Dry-run：`{str(dry_run).lower()}`\n\n"
         "## 执行结果\n\n"
         "| 阶段 | 步骤 | 输出文件 | 状态 |\n"
         "| --- | --- | --- | --- |\n"
-        f"| 1 | collect | {raw_output} | 失败或未完成 |\n"
-        "| 2 | analyze | `未完成` | 失败或未完成 |\n"
-        "| 3 | organize | `未完成` | 失败或未完成 |\n"
-        "| 4 | save | `未完成` | 失败或未完成 |\n\n"
+        f"| 1 | collect | 候选条目 | {format_failure_step_status(steps, 1)} |\n"
+        f"| 2 | save_raw | {raw_output} | "
+        f"{format_failure_step_status(steps, 2)} |\n"
+        f"| 3 | analyze_organize | `未完成` | "
+        f"{format_failure_step_status(steps, 3)} |\n"
+        f"| 4 | save_articles | `未完成` | "
+        f"{format_failure_step_status(steps, 4)} |\n\n"
         "## 失败信息\n\n"
         f"- 错误类型：`{type(error).__name__}`\n"
         f"- 错误信息：`{str(error)}`\n\n"
@@ -994,37 +1172,36 @@ def write_failure_run_log(
 def build_run_log_content(result: PipelineResult) -> str:
     """Build Markdown content for a completed pipeline execution."""
     raw_file = format_optional_path(result.raw_file)
+    raw_input_file = format_optional_path(result.raw_input_file)
     article_output = format_article_output(result.article_files)
     article_list = format_article_file_list(result.article_files)
     cost_report = format_cost_report(result.cost_report)
     sources = ", ".join(result.sources)
+    step_sequence = format_step_sequence(result.steps)
+    step_table = format_step_table(result)
 
     return (
         "# Agent 执行日志\n\n"
         "## 基本信息\n\n"
         f"- 运行 ID：`{result.run_id}`\n"
         "- 调用方：pipeline CLI\n"
-        "- 执行顺序：`collect -> analyze -> organize -> save`\n"
+        f"- 执行顺序：`{step_sequence}`\n"
         f"- 数据来源：`{sources}`\n"
         f"- 执行日期：`{result.started_at[:10]}`\n"
         f"- 开始时间：`{result.started_at}`\n"
         f"- 结束时间：`{result.finished_at}`\n"
         f"- 执行方式：`python pipeline/pipeline.py --sources {sources} "
-        f"--limit {result.limit}`\n"
+        f"--limit {result.limit} {format_step_cli_args(result.steps)}`\n"
         f"- Dry-run：`{str(result.dry_run).lower()}`\n\n"
         "## 执行结果\n\n"
-        "本次流程已完成四个阶段，并生成以下文件：\n\n"
-        "| 阶段 | 步骤 | 输出文件 | 状态 |\n"
-        "| --- | --- | --- | --- |\n"
-        f"| 1 | collect | {raw_file} | 成功 |\n"
-        "| 2 | analyze | LLM 结构化分析结果 | 成功 |\n"
-        "| 3 | organize | 标准化 article JSON 记录 | 成功 |\n"
-        f"| 4 | save | {article_output} | 成功 |\n\n"
+        "本次流程已完成选中的阶段：\n\n"
+        f"{step_table}\n"
         "## collect 阶段\n\n"
         f"- 来源：`{sources}`\n"
         f"- 采集上限：{result.limit}\n"
         f"- 实际采集条目数：{result.collected_count}\n"
-        f"- raw 输出：{raw_file}\n\n"
+        f"- raw 输出：{raw_file}\n"
+        f"- raw 输入：{raw_input_file}\n\n"
         "## analyze 阶段\n\n"
         "- 分析方式：调用 `pipeline/model_client.py` 中的 LLM 客户端\n"
         f"- 成功分析条目数：{result.analyzed_count}\n"
@@ -1049,6 +1226,47 @@ def build_run_log_content(result: PipelineResult) -> str:
         "- 若外部 API 或 LLM provider 不可访问，"
         "流程会在对应阶段失败。\n"
     )
+
+
+def format_step_sequence(steps: Sequence[int]) -> str:
+    """Format selected steps as a readable execution sequence."""
+    if not steps:
+        return "未解析"
+    return " -> ".join(STEP_NAMES.get(step, str(step)) for step in steps)
+
+
+def format_step_cli_args(steps: Sequence[int]) -> str:
+    """Format selected steps as CLI arguments."""
+    if not steps or list(steps) == list(DEFAULT_STEPS):
+        return ""
+    return " ".join(f"--step {step}" for step in steps)
+
+
+def format_step_table(result: PipelineResult) -> str:
+    """Format the selected step table for a completed run log."""
+    return (
+        "| 阶段 | 步骤 | 输出 | 状态 |\n"
+        "| --- | --- | --- | --- |\n"
+        f"| 1 | collect | 候选条目 {result.collected_count} 条 | "
+        f"{format_success_step_status(result.steps, 1)} |\n"
+        f"| 2 | save_raw | {format_optional_path(result.raw_file)} | "
+        f"{format_success_step_status(result.steps, 2)} |\n"
+        f"| 3 | analyze_organize | 分析 {result.analyzed_count} 条，"
+        f"跳过重复 {result.skipped_duplicate_count} 条 | "
+        f"{format_success_step_status(result.steps, 3)} |\n"
+        f"| 4 | save_articles | {format_article_output(result.article_files)} | "
+        f"{format_success_step_status(result.steps, 4)} |\n"
+    )
+
+
+def format_success_step_status(steps: Sequence[int], step: int) -> str:
+    """Return success table status for one step."""
+    return "成功" if step in steps else "未执行"
+
+
+def format_failure_step_status(steps: Sequence[int], step: int) -> str:
+    """Return failure table status for one step."""
+    return "失败或未完成" if step in steps else "未执行"
 
 
 def format_optional_path(path: Path | None) -> str:
@@ -1118,14 +1336,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     run_id = build_run_id()
     started_at = now_iso()
     sources: list[str] = []
+    steps: list[int] = []
 
     try:
         sources = parse_sources(args.sources)
+        steps = parse_steps(args.steps)
         rss_feeds = parse_rss_feed_urls(args.rss_feeds)
         result = run_pipeline(
             sources=sources,
             limit=args.limit,
             rss_feeds=rss_feeds,
+            steps=steps,
             dry_run=args.dry_run,
             run_id=run_id,
             started_at=started_at,
@@ -1140,6 +1361,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 started_at=started_at,
                 sources=sources,
                 limit=args.limit,
+                steps=steps,
                 dry_run=args.dry_run,
                 error=exc,
             )
