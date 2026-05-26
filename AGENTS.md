@@ -39,7 +39,9 @@
 ├── skills/
 ├── knowledge/
 │   ├── raw/
-│   └── articles/
+│   ├── analyzed/
+│   ├── articles/
+│   └── reports/
 └── specs/
 ```
 
@@ -51,8 +53,20 @@
 - `agents/organizers/`：整理 Agent，负责去重、归档、结构化校验和分发前整理。
 - `skills/`：存放项目内可复用技能、提示词模板、工具说明或 Agent 能力说明。
 - `knowledge/raw/`：存放原始采集数据，保留来源、时间、原始标题、链接和未清洗内容。
-- `knowledge/articles/`：存放经过分析和整理后的结构化知识条目 JSON。
+- `knowledge/analyzed/`：存放 LLM 分析中间结果，保留标签、评分、失败原因和趋势归纳等过程信息。
+- `knowledge/articles/`：存放经过分析和整理后的最终结构化知识条目 JSON，是知识库唯一主产物。
+- `knowledge/reports/`：存放从 `knowledge/articles/` 派生的人读 Markdown、日报、周报或分发预览。
 - `specs/`：存放产品规格、项目愿景和需求文档。
+
+## 数据契约
+
+- JSON 是知识库唯一主产物；Markdown、日报、页面展示、Telegram 和飞书内容都必须从 `knowledge/articles/` 中的 JSON 派生。
+- `knowledge/raw/`、`knowledge/analyzed/`、`knowledge/articles/` 三层数据都必须保留，分别用于原始证据、分析过程和最终知识条目。
+- `knowledge/articles/` 只保存最终 article JSON，不存放 Markdown 或日报。
+- `knowledge/reports/` 只保存派生产物，不作为权威数据源。
+- `knowledge/analyzed/` 使用独立中间 schema，不要求等同最终 article schema。
+- 最终分发只允许消费 `status` 为 `reviewed` 或 `published` 的 article。
+- article 入库前必须进行结构校验；入库后可以进行质量评分；分发前必须再次检查 JSON 合法性和状态。
 
 ## 知识条目 JSON 格式
 
@@ -99,6 +113,7 @@
 - `key_points`：关键点数组。
 - `risks`：风险或不确定性数组。
 - `distribution_channels`：计划分发渠道数组，可包含 `telegram`、`feishu`。
+- 可选扩展字段允许存在，例如 `score`、`score_reason`、`metadata`，但不能替代上述必填字段。
 
 ## Agent 角色概览
 
@@ -113,6 +128,7 @@
 - Telegram 和飞书只消费 `knowledge/articles/` 中状态合适的 JSON 条目。
 - 分发内容必须从 JSON 字段生成，不得绕过知识库直接拼接未验证的原始采集内容。
 - 分发前必须检查 `status`，只有 `reviewed` 或 `published` 状态的条目可以进入正式分发。
+- `draft` 条目只能用于待审或 dry-run 预览；`archived` 条目不进入主动分发。
 - 分发失败时不得丢弃知识条目，应记录失败原因并允许重试。
 
 ## 红线

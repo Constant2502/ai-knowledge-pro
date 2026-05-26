@@ -14,7 +14,8 @@
 
 - 建议目录：`knowledge/analyzed/`
 - 格式：JSON
-- 内容：带标签、摘要和判断原因的分析结果。
+- 内容：带标签、摘要、评分、判断原因和失败记录的分析中间结果。
+- 说明：`knowledge/analyzed/` 使用独立中间 schema，不要求等同最终 article schema。
 
 推荐文件名：
 
@@ -48,6 +49,8 @@ knowledge/analyzed/{run_id}-github-trending.json
       },
       "key_points": ["关键点 1", "关键点 2"],
       "risks": ["风险或不确定性 1"],
+      "score": 7,
+      "score_reason": "信息完整，且对 Agent 工程有明确参考价值。",
       "tagging_reason": "根据 README、描述或项目定位判断其属于 Agent 框架"
     }
   ],
@@ -67,17 +70,19 @@ knowledge/analyzed/{run_id}-github-trending.json
 - 为每条 AI 相关动态生成 `domain`、`artifact_type`、`maturity` 三个维度标签。
 - 输出结构化 JSON，供 organizer 消费。
 - 对无法判断的条目标记原因，写入 `failed_items`。
-- 不直接生成最终 Markdown。
+- 不直接生成最终 article JSON。
+- 不直接生成 Markdown、日报或分发内容。
 
 ## 验收标准
 
 - 每条成功分析的数据都有三个维度的标签。
 - 标签输出为结构化 JSON。
 - 标签缺失或不确定时有明确原因。
-- analyzer 不直接生成最终 Markdown。
+- analyzer 不直接生成最终 article JSON。
 
 ## 边界
 
 - 不抓取 GitHub Trending。
-- 不生成最终 Markdown。
+- 不生成最终 article JSON。
+- 不生成 Markdown 或分发内容。
 - 不分析非 collector 成功输出的数据。

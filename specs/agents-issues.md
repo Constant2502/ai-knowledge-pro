@@ -2,6 +2,17 @@
 
 来源：`specs/agents-prd.md`
 
+## 已确认的数据契约
+
+- JSON 是知识库唯一主产物。
+- `knowledge/raw/`、`knowledge/analyzed/`、`knowledge/articles/` 三层数据都保留。
+- `knowledge/articles/` 只保存最终标准化 article JSON。
+- Markdown、日报、周报和分发预览都从 article JSON 派生，输出到 `knowledge/reports/`。
+- article 状态只允许 `draft`、`reviewed`、`published`、`archived`。
+- 正式分发只消费 `reviewed` 或 `published` 状态的 article。
+- `knowledge/analyzed/` 使用独立中间 schema，不要求等同最终 article schema。
+- article 入库前强制 schema 校验，入库后可做质量评分，分发前再次检查状态和 JSON 合法性。
+
 ## Issue 1: 搭建每日串行 Agent 工作流
 
 **类型**：feature
@@ -80,29 +91,31 @@ analyzer 读取 `knowledge/raw/`，对每条数据打 3 个维度的标签。
 - 每条输入数据都有 3 个维度的标签。
 - 标签输出为结构化 JSON。
 - 标签缺失或不确定时有明确原因。
-- analyzer 不直接生成最终 Markdown。
+- analyzer 不直接生成最终 article JSON，也不生成 Markdown 或分发内容。
 
-## Issue 4: 实现 organizer Agent 整理成 Markdown
+## Issue 4: 实现 organizer Agent 生成最终 article JSON
 
 **类型**：feature
 
-**标签**：`organizer`, `markdown`, `knowledge`
+**标签**：`organizer`, `json`, `knowledge`
 
 **背景**
 
-organizer 读取已标注数据，整理成 Markdown 文章或日报。
+organizer 读取已标注数据，整理成最终标准化 article JSON。JSON 是知识库唯一主产物，Markdown 或日报必须作为派生产物输出到 `knowledge/reports/`。
 
 **任务**
 
 - 读取 analyzer 输出的已标注数据。
-- 按领域、类型或重要性组织内容。
-- 生成 Markdown 文档。
-- 保留每条动态的标题、来源链接、摘要、标签和风险提示。
-- 输出到约定目录。
+- 按 `source_url` 或稳定 ID 去重。
+- 补齐 `AGENTS.md` 中定义的 article 必填字段。
+- 将条目状态初始化为 `draft`。
+- 写入 `distribution_channels`，但不直接执行分发。
+- 入库前运行 schema 校验。
+- 将最终 JSON 输出到 `knowledge/articles/`。
 
 **验收标准**
 
-- Markdown 可读，结构稳定。
+- 输出 JSON 可解析，并符合最终 article schema。
 - 每条内容都能追溯到原始来源。
 - 不包含未经过 analyzer 标注的数据。
 - 生成失败时不覆盖已有有效结果。
@@ -154,7 +167,8 @@ v0.1 使用文件传递，降低系统复杂度：
 
 - collector 输出到 `knowledge/raw/`。
 - analyzer 读取 raw，并输出结构化分析 JSON。
-- organizer 读取分析 JSON，并生成 Markdown。
+- organizer 读取分析 JSON，并生成最终 article JSON。
+- reports 生成器从 article JSON 派生 Markdown、日报或分发预览。
 
 **任务**
 
@@ -185,7 +199,8 @@ PRD 开放问题：重跑策略？
 
 - 同一天 collector 重跑时覆盖或生成新版本 raw 文件，但必须保留可追溯记录。
 - analyzer 可针对单条或整批 raw 重跑。
-- organizer 可基于最新 analyzer 输出重新生成 Markdown。
+- organizer 可基于最新 analyzer 输出重新生成 article JSON。
+- reports 可基于已有 article JSON 独立重跑。
 
 **任务**
 
@@ -245,13 +260,14 @@ PRD 开放问题：进度追踪？
 
 **背景**
 
-当前 `AGENTS.md` 描述了 GitHub Trending 和 Hacker News、多渠道分发、JSON 知识库等更完整范围；`specs/agents-prd.md` 当前只描述三 Agent 串行流程，并要求 organizer 输出 Markdown。
+当前 `AGENTS.md` 描述了 GitHub Trending 和 Hacker News、多渠道分发、JSON 知识库等更完整范围；旧版 `specs/agents-prd.md` 只描述三 Agent 串行流程，并要求 organizer 输出 Markdown。
 
 **任务**
 
-- 明确 `specs/agents-prd.md` 是否要继承 `AGENTS.md` 中的 Hacker News 和 Telegram/飞书分发范围。
-- 明确 organizer 的最终输出是 Markdown、JSON，还是 JSON 派生 Markdown。
-- 更新 PRD，使流程目标、数据格式和分发目标一致。
+- 将 `specs/agents-prd.md` 更新为 JSON 主产物。
+- 将 organizer 的最终输出改为 article JSON。
+- 将 Markdown、日报和分发预览定义为 `knowledge/reports/` 中的派生产物。
+- 将状态枚举统一为 `draft`、`reviewed`、`published`、`archived`。
 
 **验收标准**
 

@@ -3,7 +3,14 @@
 ## 要做什么
 - 每天抓取 GitHub Trending Top 10，并只保留 AI 相关项目。
 - 用 Agent 分析每个入选项目，输出结构化判断。
-- 以 JSON 作为知识条目的主输出格式，后续可以基于 JSON 渲染 Markdown、日报或其他展示形态。
+- 以 JSON 作为知识库唯一主产物，后续可以基于 JSON 渲染 Markdown、日报、分发消息或其他展示形态。
+
+## 数据分层
+
+- `knowledge/raw/`：原始采集证据，保留来源、标题、链接、采集时间、原始描述和过滤依据。
+- `knowledge/analyzed/`：分析中间结果，保留 AI 相关性判断、三维度标签、评分、失败原因和趋势归纳。
+- `knowledge/articles/`：最终标准化 article JSON，是检索、分发和报告生成的唯一权威数据源。
+- `knowledge/reports/`：从 article JSON 派生的人读 Markdown、日报、周报或分发预览。
 
 ## AI 相关判定
 - repo 描述、README、topics 或项目名命中 AI、LLM、Agent、RAG、model、inference、fine-tuning、eval、embedding、vector 等关键词。
@@ -21,33 +28,35 @@
 - 风险/不确定性：如文档不完整、维护风险、概念炒作、依赖重、商业化不清晰等。
 
 ## 知识条目格式
-每个知识条目输出为 JSON 对象，字段如下：
+每个最终知识条目输出为 JSON 对象，并写入 `knowledge/articles/`。必填字段如下：
 
 ```json
 {
-  "date": "2026-05-20",
+  "id": "2026-05-21-github-trending-owner-repo",
+  "title": "项目或文章标题",
   "source": "github_trending",
-  "repo_name": "owner/repo",
-  "repo_url": "https://github.com/owner/repo",
-  "description": "GitHub 原始描述",
-  "stars": 12345,
-  "language": "Python",
+  "source_url": "https://github.com/owner/repo",
+  "source_type": "repository",
+  "published_at": "2026-05-21",
+  "collected_at": "2026-05-21T10:00:00+08:00",
+  "summary": "一句话说明这个动态是什么，以及为什么值得关注。",
+  "content": "整理后的正文或结构化说明。",
+  "tags": ["AI", "LLM", "Agent"],
+  "status": "draft",
   "ai_relevance": true,
   "ai_relevance_reason": "为什么判定为 AI 相关",
-  "summary": "一句话定位",
-  "capabilities": ["核心能力 1", "核心能力 2"],
-  "use_cases": ["适用场景 1", "适用场景 2"],
-  "technical_keywords": ["Agent", "RAG"],
-  "why_watch": "关注理由",
+  "key_points": ["关键点 1", "关键点 2"],
   "risks": ["风险或不确定性 1"],
-  "raw_trending_rank": 1
+  "distribution_channels": ["telegram", "feishu"]
 }
 ```
 
+允许保留 `score`、`score_reason`、`metadata` 等扩展字段，但扩展字段不能替代标准必填字段。
+
 ## 不做什么
 - v1.0 不做泛化的 GitHub Trending 摘要，只关注 AI 相关项目。
-- v1.0 不引入评分体系，避免在样本不足时制造伪精确分数。
-- v1.0 不优先做人读 Markdown；Markdown、日报、页面展示都应从 JSON 派生。
+- v1.0 不把评分作为必填主字段；`score` 只能作为可选辅助质量信号，避免在样本不足时制造伪精确分数。
+- v1.0 不把人读 Markdown 作为主产物；Markdown、日报、页面展示都应从 JSON 派生并写入 `knowledge/reports/`。
 - v1.0 不承诺覆盖所有 AI 开源项目，只处理当天 GitHub Trending Top 10 中符合条件的项目。
 
 ## 边界 & 验收
@@ -55,7 +64,7 @@
 - 非 AI 相关项目必须被过滤，并给出过滤依据或不进入最终输出。
 - 每个入库项目必须包含完整 JSON 字段。
 - Agent 输出必须包含 6 类分析，不允许只给项目简介。
-- `ai_relevance_reason` 和 `why_watch` 必须是具体判断，不能只写“AI 相关”或“上了 Trending”。
+- `ai_relevance_reason` 和 `summary` 必须是具体判断，不能只写“AI 相关”或“上了 Trending”。
 - 输出 JSON 必须可被程序解析。
 
 ## 怎么验证
